@@ -108,14 +108,6 @@ const handleToggleStock = (groceryData)=>{
         })
 }
 
-render (
-  <BrowserRouter>
-
-   <Route path="/" element={<Show />}>
-   </Route>
-</BrowserRouter>,
-  document.getElementById("root")
-)
 
 
   return (
@@ -123,18 +115,18 @@ render (
       <h1>ASIAN GROCERY</h1>
       <section>
       <h2>Browse groceries</h2>
-      <ul class = 'groceryContainer'>
+      <ul className = 'groceryContainer'>
           {
               groceries.map((grocery)=>{
-                  return <li key = {grocery._id} onclick = {(event) => {handleToggleStock(grocery)
+                  return <div key = {grocery._id} onClick = {(event) => {handleToggleStock(grocery)
 
                   }}>
-                  <div class = 'groceryDiv'>
-                  {<li class = 'groceryName'>{grocery.name}</li>}
+                  <div className = 'groceryDiv'>
+                  {<li className = 'groceryName'>{grocery.name}</li>}
                   {<img src = {grocery.image}></img>}
 
-                  {<li class = 'descriptionLI'>{grocery.description}</li>}
-                  <div class = 'priceStock'>
+                  {<li className = 'descriptionLI'>{grocery.description}</li>}
+                  <div className = 'priceStock'>
                   {<li>Price: {grocery.price}</li>}
 
                   {grocery.inStock ? <li>In Stock</li> : <li>Out of Stock</li>}
@@ -144,7 +136,7 @@ render (
               <button onClick={ (event)=>{ handleDelete(grocery) } }>Delete</button>
                   </div>
 
-                  </li>
+                  </div>
 
               })
           }
