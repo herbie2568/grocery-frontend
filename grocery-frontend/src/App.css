@@ -1,3 +1,18 @@
 img {
   width: 250px;
 }
+
+li {
+  list-style-type: none;
+}
+
+.groceryContainer {
+  display: flex;
+  justify-content: center;
+  gap: 5vw;
+  flex-flow: row wrap;
+}
+
+.groceryDiv {
+  width: 250px;
+}

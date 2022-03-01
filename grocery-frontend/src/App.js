@@ -1,7 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
+import {render} from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {useState, useEffect} from 'react';
+import Show from "./pages/Show"
 
 const App = () => {
   const [newName, setNewName] = useState('')
@@ -105,18 +108,28 @@ const handleToggleStock = (groceryData)=>{
         })
 }
 
+render (
+  <BrowserRouter>
+
+   <Route path="/" element={<Show />}>
+   </Route>
+</BrowserRouter>,
+  document.getElementById("root")
+)
+
+
   return (
     <main>
       <h1>ASIAN GROCERY</h1>
       <section>
       <h2>Browse groceries</h2>
-      <ul>
+      <ul class = 'groceryContainer'>
           {
               groceries.map((grocery)=>{
                   return <li key = {grocery._id} onclick = {(event) => {handleToggleStock(grocery)
 
                   }}>
-                  <div class = 'groceryContainer'>
+                  <div class = 'groceryDiv'>
                   {<li class = 'groceryName'>{grocery.name}</li>}
                   {<img src = {grocery.image}></img>}
 
@@ -125,6 +138,7 @@ const handleToggleStock = (groceryData)=>{
                   {<li>Price: {grocery.price}</li>}
 
                   {grocery.inStock ? <li>In Stock</li> : <li>Out of Stock</li>}
+                  {<li>{grocery.tag}</li>}
                   </div>
 
               <button onClick={ (event)=>{ handleDelete(grocery) } }>Delete</button>
