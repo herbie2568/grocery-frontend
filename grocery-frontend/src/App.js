@@ -146,7 +146,7 @@ const style = {
     <>
 
     <main>
-      <h1>ASIAN GROCERY</h1>
+      <h1>Lily and Jihee GROCERY</h1>
       <section>
       <h2>Browse groceries</h2>
       <ul className = 'groceryContainer'>
