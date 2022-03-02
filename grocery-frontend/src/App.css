@@ -16,3 +16,14 @@ li {
 .groceryDiv {
   width: 250px;
 }
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.searchBar {
+  margin-top: 4vh;
+  margin-right: 10vw;
+}
