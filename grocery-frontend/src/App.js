@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
 import {render} from "react-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import {useState, useEffect} from 'react';
 import Show from "./pages/Show"
 
@@ -22,19 +22,19 @@ const App = () => {
       .then((response)=>{
         setGroceries(response.data);
       })
-},[])
+  },[])
 
 
 const handleNewNameChange = (event)=>{
   setNewName(event.target.value);
 }
 
-  const handleNewDescriptionChange = (event)=>{
-    setNewDescription(event.target.value);
-  }
+const handleNewDescriptionChange = (event)=>{
+  setNewDescription(event.target.value);
+}
 
-  const handleNewStockChange = (event)=>{
-	setNewStock(event.target.checked);
+const handleNewStockChange = (event)=>{
+setNewStock(event.target.checked);
 }
 
 const handleNewDeliveryChange = (event)=>{
