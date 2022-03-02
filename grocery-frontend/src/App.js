@@ -2,9 +2,23 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios'
 import {render} from "react-dom";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 import {useState, useEffect} from 'react';
 import Show from "./pages/Show"
+
+
+
+
+
+
 
 const App = () => {
   const [newName, setNewName] = useState('')
@@ -16,6 +30,9 @@ const App = () => {
   const [newDelivery, setNewDelivery] = useState(false)
   const [groceries, setGroceries] = useState([])
 
+
+
+
   useEffect(()=>{
   axios
       .get('http://localhost:3000/groceries')
@@ -23,6 +40,7 @@ const App = () => {
         setGroceries(response.data);
       })
   },[])
+
 
 
 const handleNewNameChange = (event)=>{
@@ -108,9 +126,25 @@ const handleToggleStock = (groceryData)=>{
         })
 }
 
+const showItem = () => {
 
+}
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
 
   return (
+    <>
+
     <main>
       <h1>ASIAN GROCERY</h1>
       <section>
@@ -118,12 +152,15 @@ const handleToggleStock = (groceryData)=>{
       <ul className = 'groceryContainer'>
           {
               groceries.map((grocery)=>{
-                  return <div key = {grocery._id} onClick = {(event) => {handleToggleStock(grocery)
-
-                  }}>
+                  return <div key = {grocery._id} >
                   <div className = 'groceryDiv'>
                   {<li className = 'groceryName'>{grocery.name}</li>}
-                  {<img src = {grocery.image}></img>}
+
+                  {<img src = {grocery.image} />}
+
+
+                  <Show name = {grocery.name} image = {grocery.image} />
+
 
                   {<li className = 'descriptionLI'>{grocery.description}</li>}
                   <div className = 'priceStock'>
@@ -134,6 +171,10 @@ const handleToggleStock = (groceryData)=>{
                   </div>
 
               <button onClick={ (event)=>{ handleDelete(grocery) } }>Delete</button>
+
+              <div>
+
+              </div>
                   </div>
 
                   </div>
@@ -153,6 +194,7 @@ const handleToggleStock = (groceryData)=>{
         </form>
       </section>
     </main>
+    </>
   )
 }
 
