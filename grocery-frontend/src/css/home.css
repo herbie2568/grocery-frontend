@@ -1,0 +1,31 @@
+h2 {
+  text-align: center;
+}
+
+
+.header {
+  display: flex;
+  justify-content: center;
+  gap: 1vw;
+}
+
+.searchBar input{
+  margin-top: 2vh;
+}
+
+.groceryContainer {
+  display: flex;
+  justify-content: center;
+  gap: 5vw;
+  flex-flow: row wrap;
+  margin-top: 3vh;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.trashcan {
+  margin-top: 5px;
+}

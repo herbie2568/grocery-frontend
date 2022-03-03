@@ -6,24 +6,52 @@ li {
   list-style-type: none;
 }
 
-.groceryContainer {
-  display: flex;
-  justify-content: center;
-  gap: 5vw;
-  flex-flow: row wrap;
-}
 
 .groceryDiv {
   width: 250px;
 }
 
-.header {
+nav {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20%;
 }
 
-.searchBar {
-  margin-top: 4vh;
-  margin-right: 10vw;
+/* #google_translate_element {
+  padding: 5px;
+  width: 50%;
+} */
+
+.skiptranslate {
+  width: 50%;
+}
+
+.goog-te-gadget-simple nav{
+  width: 50%;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+span {
+  display: none;
+}
+
+.logoAnchor {
+  width: 10%;
+  margin-left: 2vw;
+  margin-top: 2vh;
+}
+
+.logo {
+  width: 100%;
+}
+
+.logoDiv {
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+}
+
+.appName {
+  align-self: center;
 }
