@@ -9,6 +9,11 @@ import {
   useParams,
 } from "react-router-dom";
 import '../css/create.css';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const CreateForm = (props) => {
   const [newName, setNewName] = useState('')
@@ -71,19 +76,30 @@ const CreateForm = (props) => {
 
   return (
     <>
+    <input className = 'searchInput2' type="text" placeholder="search..."
+    ></input>
     <div className = 'new-container'>
-    <h2>Create a grocery</h2>
-    <form onSubmit={handleNewGroceryFormSubmit}>
-      Name: <input type = 'text' onChange={handleNewNameChange}/><br/>
-      Image URL: <input type = 'text' onChange={handleNewImageChange}/><br/>
-      Description: <input type = 'text' onChange={handleNewDescriptionChange}/><br/>
-      Price: <input type = 'text' onChange={handleNewPriceChange}/><br/>
-      In Stock: <input type = 'checkbox' onChange={handleNewStockChange}/><br/>
-      Available for Delivery: <input type = 'checkbox' onChange={handleNewDeliveryChange}/><br/>
-      Tag: <input type = 'text' onChange={handleNewTagChange}/><br/>
-      <input type = 'submit' value = 'Add grocery' />
+    <h2>Add New Item</h2>
+    <form className = 'addForm' onSubmit={handleNewGroceryFormSubmit}>
+      <input type = 'text' className = 'addInput' placeholder = 'Item Name...' onChange={handleNewNameChange}/><br/>
+      <input className = 'addInput' type = 'text' placeholder = 'Image URL...' onChange={handleNewImageChange}/><br/>
+      <input className = 'addInput' type = 'text' placeholder = 'Item Description...' onChange={handleNewDescriptionChange}/><br/>
+      <input className = 'addInput' type = 'text' placeholder = 'Price...' onChange={handleNewPriceChange}/><br/>
+      <input className = 'addInput' type = 'text' placeholder = 'Tags...' onChange={handleNewTagChange}/><br/>
+      <div className = 'stockDelivery'>
+      <div className = 'stockCheck'>
+      In Stock: <input className = 'checkbox' type = 'checkbox' onChange={handleNewStockChange}/>
+      </div>
+      <div className ='stockCheck'>
+      Available for Delivery: <input className = 'checkbox' type = 'checkbox' onChange={handleNewDeliveryChange}/>
+      </div>
+      </div>
+
+      <input className = 'submitButton' type = 'submit' value = 'Add Item' />
       </form>
       </div>
+
+
   </>
   )
 };

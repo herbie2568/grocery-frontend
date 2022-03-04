@@ -1,24 +1,64 @@
 .info-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 2vw;
+
 }
 
 .review-form {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  width: 50%;
-  margin-left: 25%;
+  width: 400px;
   margin-top: 10%;
+  text-align: center;
+  margin-bottom: 20vh;
+  align-self: center; */
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: 20vh;
+
 }
 
 .review-container form {
   display: flex;
   flex-direction: column;
-  text-align:
+
 }
 
 .textarea textarea {
   width: 99%;
+}
+
+.reviewImage {
+  width: 300px;
+}
+
+.reviewContainer {
+  width: 300px;
+  background: #F2F1DA;
+  border: 2px solid #eba743;
+  border-radius: 5px;
+  padding-top: 1vh;
+  text-align: center;
+
+}
+
+.reviewDescription {
+  padding: 1vh 2vw 1vh 2vw;
+}
+
+textarea {
+margin-bottom: 5vh;
+}
+
+.addInput2 {
+  width: 450px;
+  align-self: center;
+}
+
+.reviewForm2 {
+  text-align: center;
+
 }

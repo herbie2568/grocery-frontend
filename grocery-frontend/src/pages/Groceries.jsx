@@ -36,16 +36,17 @@ const Groceries = () => {
 
     return (
       <>
+      <input className = 'searchInput' type="text" placeholder="search..." value={filter} onChange={(e) => {e.preventDefault(); setFilter(e.target.value);
+      }}
+      ></input>
+
       <section class = 'body'>
-      <h2>Browse groceries</h2>
-
-      <div className = 'header'>
-
-
-      <div className = 'searchBar'>
-      <br/>
+      <div className = 'middleImageDiv'>
+      <img className = 'middleImage' src = 'https://i.imgur.com/LV87Nfn.png'></img>
       </div>
-      </div>
+
+      <div className = 'groceryContainerDiv'>
+        <h2 className = 'ourProducts'>Our Products</h2>
       <div className = 'groceryContainer'>
       {
         groceries.filter((search) =>
@@ -55,6 +56,7 @@ const Groceries = () => {
           {<li className = 'groceryName'>{grocery.name}</li>}
 
           {<img src = {grocery.image} />}
+          {<li className = 'groceryPrice'>{grocery.price}</li>}
 
           <div className = "buttons">
           <Show name = {grocery.name} image = {grocery.image}
@@ -67,7 +69,7 @@ const Groceries = () => {
 
           <Grid>
           <Grid item xs={8}>
-          <div className = "trashcan" onClick={ (event)=>{ handleDelete(grocery) } }> <DeleteRoundedIcon /></div>
+          <div className = "trashcan" onClick={ (event)=>{ handleDelete(grocery) } }> <DeleteRoundedIcon className = 'trashIcon'/></div>
           </Grid>
           </Grid>
           </div>
@@ -76,6 +78,7 @@ const Groceries = () => {
           )
         })
       }
+      </div>
       </div>
       </section>
       </>

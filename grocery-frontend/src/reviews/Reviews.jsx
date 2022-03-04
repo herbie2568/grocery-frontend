@@ -13,6 +13,7 @@ import {
 import App from "../App";
 import '../css/review.css';
 import ReviewsForm from "./ReviewsForm";
+import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 
 
 const Reviews = () => {
@@ -21,6 +22,7 @@ const Reviews = () => {
   const [newSubject, setNewSubject] = useState('');
   const [newImage, setNewImage] = useState('')
   const [newDescription, setNewDescription] = useState('');
+  const [filter, setFilter] = useState('')
 
   useEffect(()=>{
     axios
@@ -46,27 +48,33 @@ const Reviews = () => {
 
     return (
       <>
+      <input className = 'searchInput2' type="text" placeholder="search..." value={filter} onChange={(e) => {e.preventDefault(); setFilter(e.target.value);
+      }}
+      ></input>
       <div className = 'reviewDiv'>
-      <h2>Review</h2>
+      <h2>Reviews</h2>
       <div className = "review-container">
 
       <div className = "info-container">
       {
-        reviews.map((review)=>{
-          return <div key = {review._id} >
+        reviews.filter((search) =>
+        search.name.toLowerCase().includes(filter.toLowerCase())).map((review)=>{
+          return <div class = 'reviewContainer' key = {review._id} >
           {<h3>Name: {review.name}</h3>}
           {<h4>Subject: {review.subject}</h4>}
-          {<li>Image: <img src = {review.image}/></li>}
-          {<li>Description: {review.description}</li>}
-          <button onClick={ (event)=>{ handleDelete(review) } }>Delete</button>
+          {<li><img className = 'reviewImage' src = {review.image}/></li>}
+          {<li className = 'reviewDescription'> {review.description}</li>}<br/>
+          <div onClick={ (event)=>{ handleDelete(review) } }><DeleteRoundedIcon /></div>
 
           </div>
         })
       }
+
+      </div>
       <ReviewsForm/>
       </div>
       </div>
-      </div>
+
       </>
     )
   }

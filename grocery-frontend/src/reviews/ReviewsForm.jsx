@@ -55,15 +55,15 @@ return (
     <>
     <div className = 'review-form'>
     <h3>Write a review</h3>
-    <form onSubmit={handleNewReviewFormSubmit}>
-      Name: <input type = 'text' onChange={handleNewNameChange}/><br/>
-      Subject: <input type = 'text' onChange={handleNewSubjectChange}/><br/>
-      Image URL: <input type = 'text'  onChange={handleNewImageChange}/><br/>
-      <div className = "textarea">
-      Description: <br/> <textarea type = 'text' rows="4"
+    <form className = 'reviewForm2' onSubmit={handleNewReviewFormSubmit}>
+      <input type = 'text' placeholder = 'Name...' className = 'addInput2' onChange={handleNewNameChange}/><br/>
+      <input type = 'text' placeholder = 'Subject...' className = 'addInput2' onChange={handleNewSubjectChange}/><br/>
+      <input type = 'text' placeholder = 'Image URL...' className = 'addInput2'  onChange={handleNewImageChange}/><br/>
+
+      <textarea placeholder = 'Write a review...' className = 'addInput2' type = 'text' rows="4"
        onChange={handleNewDescriptionChange}/>
-      </div><br/>
-      <input type = 'submit' value = 'Post review'/>
+      <br/>
+      <input className = 'submitButton' type = 'submit' value = 'Post review'/>
       </form>
       </div>
     </>

@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
 
 body {
   background: #daf2df;
-  font-family: 'Fredoka', sans-serif;
+  font-family: 'Nunito', sans-serif;
+  color: #15392f;
 }
 
 img {
@@ -15,23 +16,33 @@ li {
   list-style-type: none;
 }
 
-
 .groceryDiv {
   width: 250px;
-  background: white;
-  border: 2px solid #eb9a86;
-  border-radius: 10px;
+  /* background: #F2DADE; */
+  /* background: #F2D7CE; */
+  background: #F2F1DA;
+  /* background: #FFE6BF; */
+  border: 2px solid #eba743;
+  border-radius: 5px;
   padding-top: 2vh;
 }
 
 .groceryName {
   text-align: center;
+
+}
+
+.groceryPrice {
+  margin-left: 2vw;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #7d0202;
 }
 
 nav {
   display: flex;
-  justify-content: center;
-  gap: 15%;
+  justify-content: flex-end;
+  gap: 5vw;
 }
 
 .skiptranslate {
@@ -67,7 +78,7 @@ span {
   display: flex;
   flex-direction: row;
   /* gap: 2vw; */
-  margin-left: 1vw;
+  margin-left: 2vw;
   padding-top: 1vh;
   margin-bottom: 2vh;
   justify-content: space-between;
@@ -82,22 +93,40 @@ span {
 .appName {
   /* text-align: center; */
   align-self: center;
-  font-weight: 500;
-  font-size: max(32px, 3em);
+  width: min(80%, 550px)
 }
 
 .searchInput {
   height: 30px;
-  margin-right: 3vw;
-  align-self: center;
+  width: 200px;
+  margin-left: 70vw;
+  /* align-self: center; */
   border-radius: 8px;
+  position: fixed;
+  z-index: 1000;
+  /* margin-top: 10vh; */
+  bottom: 89vh;
+  font-family: 'Nunito', sans-serif;
+}
 
+.searchInput2 {
+  height: 30px;
+  width: 200px;
+  margin-left: 70vw;
+  /* align-self: center; */
+  border-radius: 8px;
+  position: fixed;
+  z-index: 1000;
+  /* margin-top: 10vh; */
+  bottom: 90.75vh;
+  font-family: 'Nunito', sans-serif;
 }
 
 .link {
   text-decoration: none;
   color: black;
-  transition-duration: 0.4s
+  transition-duration: 0.4s;
+  font-weight: 700;
 }
 
 .link:hover {
@@ -121,7 +150,7 @@ span {
 }
 
 .body {
-  margin-top: 25vh;
+  margin-top: 18vh;
 }
 
 .new-container, .reviewDiv {
@@ -130,4 +159,161 @@ span {
 
 .button {
   color: black;
+}
+
+.groceryName {
+  padding: 0 1vw 1vw 1vw;
+  font-size: 1.1em;
+  font-weight: 800;
+
+}
+
+.ourProducts {
+  font-size: 1.2em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.trashIcon {
+  /* transition-duration: 0.3s; */
+}
+
+.trashIcon:hover {
+  transform: scale(1.1);
+  color: #eb9a86;
+  cursor: pointer;
+}
+
+.middleImageDiv {
+  width: 100vw;
+  text-align: center;
+}
+
+.middleImage {
+  width: min(100vw, 1250px);
+
+}
+
+.groceryContainerDiv {
+  display:flex;
+  flex-direction: column;
+}
+
+footer {
+  background: #b4dbbb;
+  padding-top: 1vh;
+}
+
+.footerUL {
+  display: flex;
+  flex-direction: row;
+  gap: 8vw;
+  justify-content: center;
+  margin-bottom: 3vh;
+}
+
+.footerLogoDiv {
+  text-align: center;
+}
+
+.footerLogo {
+  width: min(15%, 100px);
+
+}
+
+.footerLI {
+  align-self: center;
+  font-weight: 700;
+  font-size: .9em;
+  transition-duration: 0.3s
+}
+
+.footerLI:hover {
+  cursor: pointer;
+  color: #F2F1DA;
+}
+
+.socialIconsDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 4vw;
+  margin-bottom: 3vh;
+}
+
+.socialIcon {
+  transition-duration: 0.4s;
+}
+
+.socialIcon:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.new-container {
+  margin-top: 30vh;
+  margin-bottom: 20vh;
+}
+
+.addInput {
+  padding: 8px;
+  /* border-radius: 5px; */
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.addInput2 {
+  padding: 8px;
+  /* border-radius: 5px; */
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.stockDelivery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 5vh;
+}
+
+
+.stockCheck {
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+}
+
+.submitButton {
+  padding: 8px;
+  width: 200px;
+  align-self: center;
+  background: #F2F1DA;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+  transition-duration: 0.3s;
+  font-weight: 600;
+}
+
+.submitButton:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  background: #b4dbbb;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+}
+
+.showModal {
+  background: #F2F1DA;
+  font-family: 'Nunito', sans-serif;
+  /* display: flex;
+  flex-direction: column; */
 }

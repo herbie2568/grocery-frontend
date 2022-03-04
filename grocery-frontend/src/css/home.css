@@ -16,9 +16,9 @@ h2 {
 .groceryContainer {
   display: flex;
   justify-content: center;
-  gap: 5vw;
+  gap: 4vw;
   flex-flow: row wrap;
-  margin-top: 3vh;
+  margin-bottom: 5vh;
 }
 
 .buttons {
@@ -28,4 +28,19 @@ h2 {
 
 .trashcan {
   margin-top: 5px;
+  transition-duration: 0.2s;
+}
+
+.trashcan:hover {
+  transform: scale(1.05);
+}
+
+.editIcon {
+  background: transparent;
+
+}
+
+.MuiButton-root {
+  display: none;
+  text-transform: lowercase;
 }

@@ -7,6 +7,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import axios from 'axios'
 import '../css/edit.css';
+import EditIcon from '@mui/icons-material/Edit';
 
 
 
@@ -68,6 +69,15 @@ const Edit = (props) => {
   setNewPrice(event.target.value);
   }
 
+  const handleEditValue = (groceryData) => {
+    setNewName(groceryData.name)
+    setNewImage(groceryData.image)
+    setNewDescription(groceryData.description)
+    setNewPrice(groceryData.price)
+    setNewTag(groceryData.tag)
+
+  }
+
 
 
   const handleToggleEdit = (groceryData)=>{
@@ -95,7 +105,7 @@ const Edit = (props) => {
 
   return (
     <>
-    <Button onClick={handleOpen}>Edit</Button>
+    <Button onClick={handleOpen}><EditIcon className = 'editIcon' style = {{color: "black"}}/></Button>
     <Modal
     open={open}
     style={{background: 'transparent'}}
