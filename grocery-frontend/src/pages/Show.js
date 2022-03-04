@@ -49,7 +49,7 @@ const Show = (props) => {
 
   return (
     <>
-    <Button onClick={handleOpen}>Show Item</Button>
+    <Button style = {{color: 'black', fontFamily: 'Helvetica'}} onClick={handleOpen}>Item Details</Button>
     <Modal
     open={open}
     style={{background: 'transparent'}}

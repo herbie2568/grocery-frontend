@@ -5,7 +5,6 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
-import { pink } from '@mui/material/colors';
 import axios from 'axios'
 import '../css/edit.css';
 
@@ -23,9 +22,6 @@ const style = {
   p: 4,
   };
 
-const button = {
-  color: 'red'
-}
 
 
 
@@ -38,10 +34,9 @@ const Edit = (props) => {
   const [newDescription, setNewDescription] = useState('');
   const [newImage, setNewImage] = useState('')
   const [newPrice, setNewPrice] = useState('')
-  const [newStock, setNewStock] = useState(false);
   const [newTag, setNewTag] = useState([])
   const [newDelivery, setNewDelivery] = useState(false)
-
+  const [newStock, setNewStock] = useState(false);
 
   const handleNewNameChange = (event)=>{
     setNewName(event.target.value);
@@ -52,11 +47,13 @@ const Edit = (props) => {
   }
 
   const handleNewStockChange = (event)=>{
-  setNewStock(event.target.checked);
+    setNewStock(event.target.checked);
+   console.log(newStock)
   }
 
   const handleNewDeliveryChange = (event)=>{
   setNewDelivery(event.target.checked);
+   console.log(newDelivery)
   }
 
   const handleNewTagChange = (event)=>{
@@ -71,7 +68,9 @@ const Edit = (props) => {
   setNewPrice(event.target.value);
   }
 
-  const handleToggleStock = (groceryData)=>{
+
+
+  const handleToggleEdit = (groceryData)=>{
       axios
           .put(
               `http://localhost:3000/groceries/${groceryData?._id}`,
@@ -80,8 +79,8 @@ const Edit = (props) => {
                   image: newImage,
                   description:newDescription,
                   price: newPrice,
-                  inStock:!newStock,
-                  delivery:!newDelivery,
+                  inStock: !newStock,
+                  delivery: !newDelivery,
                   tag: newTag
               }
           )
@@ -108,13 +107,13 @@ const Edit = (props) => {
     <Typography id="modal-modal-title" variant="h6" component="h2">
     <h2>Edit a grocery</h2>
     <div className = "edit-container">
-    <form onSubmit={(e)=>{e.preventDefault();handleToggleStock(props.grocery)}}>
+    <form onSubmit={(e)=>{e.preventDefault();handleToggleEdit(props.grocery)}}>
       Name: <input type = 'text' onChange={handleNewNameChange}/><br/>
       Image URL: <input type = 'text' onChange={handleNewImageChange}/><br/>
       Description: <input type = 'text' onChange={handleNewDescriptionChange}/><br/>
       Price: <input type = 'text' onChange={handleNewPriceChange}/><br/>
-      In Stock: <input type = 'checkbox' onChange={handleNewStockChange}/><br/>
-      Available for Delivery: <input type = 'checkbox' onChange={handleNewDeliveryChange}/><br/>
+      In Stock: <input type = 'checkbox' checked = {newStock}  onChange={handleNewStockChange}/><br/>
+      Available for Delivery: <input type = 'checkbox' checked = {newDelivery} onChange={handleNewDeliveryChange}/><br/>
       Tag: <input type = 'text' onChange={handleNewTagChange}/><br/>
       <input type = 'submit' value = 'Edit grocery' />
       </form>
@@ -125,7 +124,6 @@ const Edit = (props) => {
 
   </>
   )
-
 };
 
 export default Edit;

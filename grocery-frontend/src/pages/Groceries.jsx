@@ -36,15 +36,14 @@ const Groceries = () => {
 
     return (
       <>
+      <section class = 'body'>
       <h2>Browse groceries</h2>
 
       <div className = 'header'>
-      <p>SEARCH GROCERY</p>
+
 
       <div className = 'searchBar'>
-      <input className = 'searchInput' type="text" placeholder="search..." value={filter} onChange={(e) => {e.preventDefault(); setFilter(e.target.value);
-      }}
-      ></input><br/>
+      <br/>
       </div>
       </div>
       <div className = 'groceryContainer'>
@@ -61,8 +60,8 @@ const Groceries = () => {
           <Show name = {grocery.name} image = {grocery.image}
           description = {grocery.description}
           tag = {grocery.tag}
-          inStock = {grocery.inStock ? <li>In Stock</li> : <li>Out of Stock</li>}
-          delivery = {grocery.delivery ? <li>Delivery: Available</li> : <li>Delivery: Unavailable</li>}/>
+          inStock = {grocery.inStock ? <li>Out of Stock</li> : <li>In Stock</li>}
+          delivery = {grocery.delivery ? <li>Delivery: Unavailable</li> : <li>Delivery: Available</li>}/>
 
           <Edit setGroceries={setGroceries} groceries={groceries} grocery={grocery}/>
 
@@ -78,6 +77,7 @@ const Groceries = () => {
         })
       }
       </div>
+      </section>
       </>
     )
   }

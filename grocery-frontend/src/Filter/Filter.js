@@ -1,3 +1,9 @@
+import React, {Component} from 'react'
+
+
+
+
+
 state = {
     userInputContainerClicked: false,
     searchTerm: "",

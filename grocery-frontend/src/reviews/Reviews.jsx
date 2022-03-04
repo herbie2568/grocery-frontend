@@ -46,6 +46,7 @@ const Reviews = () => {
 
     return (
       <>
+      <div className = 'reviewDiv'>
       <h2>Review</h2>
       <div className = "review-container">
 
@@ -65,7 +66,7 @@ const Reviews = () => {
       <ReviewsForm/>
       </div>
       </div>
-
+      </div>
       </>
     )
   }

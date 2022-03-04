@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+
+body {
+  background: #daf2df;
+  font-family: 'Fredoka', sans-serif;
+}
+
 img {
   width: 250px;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
 }
 
 li {
@@ -9,18 +18,21 @@ li {
 
 .groceryDiv {
   width: 250px;
+  background: white;
+  border: 2px solid #eb9a86;
+  border-radius: 10px;
+  padding-top: 2vh;
+}
+
+.groceryName {
+  text-align: center;
 }
 
 nav {
   display: flex;
   justify-content: center;
-  gap: 20%;
+  gap: 15%;
 }
-
-/* #google_translate_element {
-  padding: 5px;
-  width: 50%;
-} */
 
 .skiptranslate {
   width: 50%;
@@ -30,6 +42,11 @@ nav {
   width: 50%;
   padding: 5px;
   border-radius: 10px;
+  background: transparent;
+}
+
+#google_translate_element {
+  background: transparent;
 }
 
 span {
@@ -37,21 +54,80 @@ span {
 }
 
 .logoAnchor {
-  width: 10%;
-  margin-left: 2vw;
-  margin-top: 2vh;
+  width: min(20%, 100px);
+  margin-right: 2vw;
 }
 
 .logo {
-  width: 100%;
+  width: min(100%, 100px);
+
 }
 
 .logoDiv {
   display: flex;
   flex-direction: row;
-  gap: 2vw;
+  /* gap: 2vw; */
+  margin-left: 1vw;
+  padding-top: 1vh;
+  margin-bottom: 2vh;
+  justify-content: space-between;
+}
+
+.logoName {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
 }
 
 .appName {
+  /* text-align: center; */
   align-self: center;
+  font-weight: 500;
+  font-size: max(32px, 3em);
+}
+
+.searchInput {
+  height: 30px;
+  margin-right: 3vw;
+  align-self: center;
+  border-radius: 8px;
+
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  transition-duration: 0.4s
+}
+
+.link:hover {
+  transform: scale(1.1);
+  color: white;
+
+}
+
+.headerDiv {
+  background: #b4dbbb;
+  position: fixed;
+  top: 0;
+  opacity: 0.96;
+  width: 100%;
+  z-index: 999;
+}
+
+.navBar {
+  padding-bottom: 1vh;
+
+}
+
+.body {
+  margin-top: 25vh;
+}
+
+.new-container, .reviewDiv {
+  margin-top: 25vh;
+}
+
+.button {
+  color: black;
 }
