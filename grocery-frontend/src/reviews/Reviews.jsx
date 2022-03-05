@@ -64,7 +64,7 @@ const Reviews = () => {
           {<h4>Subject: {review.subject}</h4>}
           {<li><img className = 'reviewImage' src = {review.image}/></li>}
           {<li className = 'reviewDescription'> {review.description}</li>}<br/>
-          <div onClick={ (event)=>{ handleDelete(review) } }><DeleteRoundedIcon /></div>
+          <div onClick={ (event)=>{ handleDelete(review) } }><DeleteRoundedIcon className = 'trashIcon'/></div>
 
           </div>
         })

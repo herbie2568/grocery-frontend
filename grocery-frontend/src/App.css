@@ -43,14 +43,15 @@ nav {
   display: flex;
   justify-content: flex-end;
   gap: 5vw;
+  margin-right: 5vw;
 }
 
 .skiptranslate {
-  width: 50%;
+
 }
 
 .goog-te-gadget-simple nav{
-  width: 50%;
+
   padding: 5px;
   border-radius: 10px;
   background: transparent;
@@ -172,6 +173,7 @@ span {
   font-size: 1.2em;
   font-weight: 700;
   text-align: center;
+  margin-top: 5vh;
 }
 
 .trashIcon {
@@ -303,7 +305,7 @@ footer {
 .submitButton:hover {
   transform: scale(1.05);
   cursor: pointer;
-  background: #b4dbbb;
+  background: #eba743;
 }
 
 .checkbox {
@@ -316,4 +318,19 @@ footer {
   font-family: 'Nunito', sans-serif;
   /* display: flex;
   flex-direction: column; */
+}
+
+.carousel {
+  display: none;
+
+}
+
+.carousel-slider {
+  display: block;
+
+}
+
+.filler {
+  height: 363px;
+  background: #FFF7C9;
 }
