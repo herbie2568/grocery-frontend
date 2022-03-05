@@ -83,7 +83,7 @@ const Edit = (props) => {
   const handleToggleEdit = (groceryData)=>{
       axios
           .put(
-              `http://localhost:3000/groceries/${groceryData?._id}`,
+              `https://stark-shelf-08940.herokuapp.com/groceries/${groceryData?._id}`,
               {
                   name: newName,
                   image: newImage,
@@ -96,7 +96,7 @@ const Edit = (props) => {
           )
           .then(()=>{
               axios
-                  .get('http://localhost:3000/groceries')
+                  .get('https://stark-shelf-08940.herokuapp.com/groceries')
                   .then((response)=>{
                     props.setGroceries(response.data)
                   })

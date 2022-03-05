@@ -36,10 +36,10 @@ const Reviews = () => {
 
   const handleDelete = (reviewData)=>{
     axios
-    .delete(`http://localhost:3000/reviews/${reviewData._id}`)
+    .delete(`https://floating-crag-29031.herokuapp.com/reviews/${reviewData._id}`)
       .then(()=>{
         axios
-        .get('http://localhost:3000/reviews/')
+        .get('https://floating-crag-29031.herokuapp.com/reviews/')
         .then((response)=>{
           setReviews(response.data)
         })

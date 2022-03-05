@@ -31,7 +31,7 @@ const App = () => {
 
   useEffect(()=>{
     axios
-    .get('http://localhost:3000/groceries/')
+    .get('https://stark-shelf-08940.herokuapp.com/groceries')
     .then((response)=>{
       setGroceries(response.data);
     })
@@ -39,10 +39,10 @@ const App = () => {
 
   const handleDelete = (groceryData)=>{
     axios
-    .delete(`http://localhost:3000/groceries/${groceryData._id}`)
+    .delete(`https://stark-shelf-08940.herokuapp.com/groceries/${groceryData._id}`)
       .then(()=>{
         axios
-        .get('http://localhost:3000/groceries/')
+        .get('https://stark-shelf-08940.herokuapp.com/groceries/')
         .then((response)=>{
           setGroceries(response.data)
         })
