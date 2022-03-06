@@ -82,7 +82,7 @@ const App = () => {
       </div>
 
       <div className = 'navbarRight'>
-      <Link className = 'link' to="/items">Home</Link>
+      <Link className = 'link' to="/">Home</Link>
       <Link className = 'link' to="/review">Reviews</Link>
       <Link className = 'link' to="/new">Add Item</Link>
 
@@ -96,7 +96,7 @@ const App = () => {
     <div className="wrapper">
 
       <Routes>
-      <Route path="/items" element={<Groceries />}/>
+      <Route path="/" element={<Groceries />}/>
       <Route path="/new" element={<CreateForm />}/>
       <Route path="/review" element={<Reviews />}/>
       </Routes>
