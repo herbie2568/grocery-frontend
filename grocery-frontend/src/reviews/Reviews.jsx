@@ -59,6 +59,10 @@ const Reviews = () => {
       {
         reviews.filter((search) =>
         search.name.toLowerCase().includes(filter.toLowerCase())).map((review)=>{
+
+          if (!review.image) {
+            review.image = 'https://i.imgur.com/KH2GvHe.png'
+          }
           return <div class = 'reviewContainer' key = {review._id} >
           {<h3>Name: {review.name}</h3>}
           {<h4>Subject: {review.subject}</h4>}

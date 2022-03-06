@@ -6,9 +6,11 @@ import Reviews from "./reviews/Reviews"
 import Translate from "./pages/Translate"
 import { render } from "react-dom";
 import {
+  BrowserRouter,
   Routes,
   Route,
   Link,
+  Switch,
   useParams
 } from "react-router-dom" ;
 import Show from "./pages/Show"
@@ -27,9 +29,14 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
+
 const App = () => {
   const [filter, setFilter] = useState('')
   const [groceries, setGroceries] = useState([])
+  const [token, setToken] = useState();
+
+
+
 
   useEffect(()=>{
     axios
@@ -38,6 +45,9 @@ const App = () => {
       setGroceries(response.data);
     })
   }, [])
+
+
+
 
   const handleDelete = (groceryData)=>{
     axios
@@ -50,6 +60,8 @@ const App = () => {
         })
       })
     }
+
+
 
   return (
       <>
@@ -70,7 +82,7 @@ const App = () => {
       </div>
 
       <div className = 'navbarRight'>
-      <Link className = 'link' to="/">Home</Link>
+      <Link className = 'link' to="/items">Home</Link>
       <Link className = 'link' to="/review">Reviews</Link>
       <Link className = 'link' to="/new">Add Item</Link>
 
@@ -81,12 +93,16 @@ const App = () => {
       </div>
     </main>
 
+    <div className="wrapper">
 
-    <Routes>
-    <Route path="/" element={<Groceries />}/>
-    <Route path="/new" element={<CreateForm />}/>
-    <Route path="/review" element={<Reviews />}/>
-    </Routes>
+      <Routes>
+      <Route path="/items" element={<Groceries />}/>
+      <Route path="/new" element={<CreateForm />}/>
+      <Route path="/review" element={<Reviews />}/>
+      </Routes>
+
+    </div>
+
 
     <footer>
 

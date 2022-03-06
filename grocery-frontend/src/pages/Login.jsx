@@ -1,6 +1,8 @@
 import {useState} from 'react';
 import { styled, Box } from '@mui/system';
 import ModalUnstyled from '@mui/base/ModalUnstyled';
+import axios from 'axios'
+import PropTypes from 'prop-types';
 
 const StyledModal = styled(ModalUnstyled)`
   position: fixed;
@@ -34,10 +36,59 @@ const style = {
   pb: 3,
 };
 
-const Login = (props) => {
+const Login = (setToken) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [newUsername, setNewUsername] = useState('')
+  const [newPassword, setNewPassword] = useState('')
+  const [userInfo, setUserInfo] = useState([])
+
+  async function loginUser(credentials) {
+ return fetch('http://localhost:3000/login', {
+   method: 'POST',
+   headers: {
+     'Content-Type': 'application/json'
+   },
+   body: JSON.stringify(credentials)
+ })
+   .then(data => data.json())
+}
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const token = await loginUser({
+      newUsername,
+      newPassword
+    });
+    setToken(token);
+  }
+
+  const handleNewUsernameChange = (event)=>{
+    setNewUsername(event.target.value);
+  }
+
+  const handleNewPasswordChange = (event)=>{
+    setNewPassword(event.target.value);
+  }
+
+  const handleNewLoginFormSubmit = (event)=>{
+      event.preventDefault();
+      axios.post(
+          'http://localhost:3000/login',
+          {
+              username:newUsername,
+              password: newPassword,
+
+          }).then(()=>{
+          axios
+              .get('http://localhost:3000/login')
+              .then((response)=>{
+                  setUserInfo(response.data)
+              })
+          })
+    }
+
 
   return (
     <div>
@@ -57,20 +108,28 @@ const Login = (props) => {
         </div>
           <h2 id="unstyled-modal-title">Log In</h2>
           <div className = "edit-container">
-          <form >
+          <form onSubmit = {handleSubmit} >
 
-          <input className = 'addInput' type = 'text' placeholder = 'Username...' /><br/>
-          <input className = 'addInput' type = 'text' placeholder = 'Password...' /><br/>
+          <input className = 'addInput' type = 'text' placeholder = 'Username...' onChange={handleNewUsernameChange}/><br/>
+          <input className = 'addInput' type = 'password' placeholder = 'Password...' onChange={handleNewPasswordChange}/><br/>
 
 
 
             <input className = 'submitButton' type = 'submit' value = 'Log In' /><br/><br/>
+
             </form>
             </div>
         </Box>
       </StyledModal>
+
+
+    
     </div>
   );
+}
+
+Login.propTypes = {
+  setToken: PropTypes.func.isRequired
 }
 
 export default Login

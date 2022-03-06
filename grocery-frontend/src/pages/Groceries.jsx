@@ -69,7 +69,13 @@ const Groceries = () => {
       {
         groceries.filter((search) =>
         search.name.toLowerCase().includes(filter.toLowerCase())).map((grocery)=>{
-          return (<div key = {grocery._id} >
+
+          if (!grocery.image) {
+            grocery.image = 'https://i.imgur.com/KH2GvHe.png'
+          }
+          return (
+
+            <div key = {grocery._id} >
             <div className = 'groceryDiv'>
             <div className = 'nameDiv'><li className = 'groceryName'>{grocery.name}</li></div>
 
