@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -105,7 +105,8 @@ const Edit = (props) => {
 
   return (
     <>
-    <Button onClick={handleOpen}><EditIcon className = 'editIcon' style = {{color: "black"}}/></Button>
+    <Grid item xs={3} className = 'editButton' onClick={handleOpen}>
+      <EditIcon className = 'editIcon'/></Grid>
     <Modal
     open={open}
     style={{background: 'transparent'}}
@@ -115,17 +116,23 @@ const Edit = (props) => {
     >
     <Box sx={style}>
     <Typography id="modal-modal-title" variant="h6" component="h2">
-    <h2>Edit a grocery</h2>
+    <h2 className = 'editTitle'>Edit a grocery</h2>
     <div className = "edit-container">
     <form onSubmit={(e)=>{e.preventDefault();handleToggleEdit(props.grocery)}}>
-      Name: <input type = 'text' onChange={handleNewNameChange}/><br/>
-      Image URL: <input type = 'text' onChange={handleNewImageChange}/><br/>
-      Description: <input type = 'text' onChange={handleNewDescriptionChange}/><br/>
-      Price: <input type = 'text' onChange={handleNewPriceChange}/><br/>
-      In Stock: <input type = 'checkbox' checked = {newStock}  onChange={handleNewStockChange}/><br/>
-      Available for Delivery: <input type = 'checkbox' checked = {newDelivery} onChange={handleNewDeliveryChange}/><br/>
-      Tag: <input type = 'text' onChange={handleNewTagChange}/><br/>
-      <input type = 'submit' value = 'Edit grocery' />
+    <input type = 'text' className = 'addInput' placeholder = 'Item Name...' onChange={handleNewNameChange}/><br/>
+    <input className = 'addInput' type = 'text' placeholder = 'Image URL...' onChange={handleNewImageChange}/><br/>
+    <input className = 'addInput' type = 'text' placeholder = 'Item Description...' onChange={handleNewDescriptionChange}/><br/>
+    <input className = 'addInput' type = 'text' placeholder = 'Price...' onChange={handleNewPriceChange}/><br/>
+    <input className = 'addInput' type = 'text' placeholder = 'Tags...' onChange={handleNewTagChange}/><br/>
+    <div className = 'stockDelivery2'>
+    <div className = 'stockCheck'>
+    In Stock: <input className = 'checkbox' type = 'checkbox' onChange={handleNewStockChange}/>
+    </div>
+    <div className ='stockCheck'>
+    Available for Delivery: <input className = 'checkbox' type = 'checkbox' onChange={handleNewDeliveryChange}/>
+    </div>
+    </div>
+      <input className = 'submitButton' type = 'submit' value = 'Edit grocery' />
       </form>
       </div>
     </Typography>

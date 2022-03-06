@@ -12,6 +12,11 @@ img {
   margin-bottom: 1vh;
 }
 
+a {
+  /* text-decoration: none; */
+  color: #15392f;
+}
+
 li {
   list-style-type: none;
 }
@@ -33,37 +38,98 @@ li {
 }
 
 .groceryPrice {
-  margin-left: 2vw;
+  /* margin-left: 2vw; */
   font-size: 1.2em;
-  font-weight: 700;
+  font-weight: 800;
   color: #7d0202;
+  display: flex;
+  align-items: center;
 }
 
 nav {
   display: flex;
-  justify-content: flex-end;
-  gap: 5vw;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.loginButton {
+  padding: 8px;
+  /* width: 200px; */
+  align-self: center;
+  background: #F2F1DA;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+  transition-duration: 0.3s;
+  font-weight: 600;
+
+}
+
+.loginButton:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  background: #eba743;
+}
+
+
+.loginButtonDiv {
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+  margin-left: 10vw;
+  align-self: center;
+}
+
+.searchDiv {
+  position: relative;
+}
+
+.navbarRight {
+  display: flex;
+  gap: 40px;
   margin-right: 5vw;
 }
-
-.skiptranslate {
+.search-picshow {
+  height: 20px;
+  width: 20px;
+  position: fixed;
+  bottom: 90.5%;
+  right: 5%;
+  z-index: 1000;
 
 }
 
-.goog-te-gadget-simple nav{
 
-  padding: 5px;
-  border-radius: 10px;
-  background: transparent;
+
+.goog-te-gadget-simple {
+  border: none;
+   background-color: transparent;
+   outline: none !important;
+   margin: 0;
+   position: relative;
+   bottom: 1vh;
 }
 
 #google_translate_element {
   background: transparent;
 }
 
-span {
+.goog-te-gadget span {
   display: none;
 }
+
+.goog-te-gadget-icon {
+  border-radius: 50%;
+  transition-duration: 0.4s;
+}
+
+.goog-te-gadget-icon:hover {
+  transform: scale(1.2)
+}
+
+
 
 .logoAnchor {
   width: min(20%, 100px);
@@ -100,20 +166,18 @@ span {
 .searchInput {
   height: 30px;
   width: 200px;
-  margin-left: 70vw;
-  /* align-self: center; */
   border-radius: 8px;
   position: fixed;
   z-index: 1000;
-  /* margin-top: 10vh; */
-  bottom: 89vh;
+  bottom: 90.75vh;
+  right: 4vw;
   font-family: 'Nunito', sans-serif;
 }
 
 .searchInput2 {
   height: 30px;
   width: 200px;
-  margin-left: 70vw;
+  margin-left: 73vw;
   /* align-self: center; */
   border-radius: 8px;
   position: fixed;
@@ -132,7 +196,7 @@ span {
 
 .link:hover {
   transform: scale(1.1);
-  color: white;
+  color: #F2F1DA;
 
 }
 
@@ -162,11 +226,18 @@ span {
   color: black;
 }
 
+.nameDiv {
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .groceryName {
   padding: 0 1vw 1vw 1vw;
   font-size: 1.1em;
   font-weight: 800;
-
+  align-self: center;
 }
 
 .ourProducts {
@@ -184,6 +255,34 @@ span {
   transform: scale(1.1);
   color: #eb9a86;
   cursor: pointer;
+}
+
+.editButton {
+  position: relative;
+  top: 5px;
+  background-color: transparent;
+  background: none;
+  transition-duration: 0.2s;
+}
+
+.editButton:hover {
+  position: relative;
+  top: 5px;
+  transform: scale(1.05);
+  background-color: transparent;
+}
+
+.editIcon:hover {
+  transform: scale(1.1);
+  color: #eb9a86;
+  cursor: pointer;
+  background-color: transparent;
+  margin:0;
+}
+
+.detailsButton:hover {
+  transform: scale(1.05);
+  color: white;
 }
 
 .middleImageDiv {
@@ -252,6 +351,11 @@ footer {
   transform: scale(1.1);
 }
 
+.bottomLine {
+  text-align: center;
+  font-size: 8pt;
+}
+
 .new-container {
   margin-top: 30vh;
   margin-bottom: 20vh;
@@ -287,6 +391,7 @@ footer {
   display: flex;
   flex-direction: row;
   gap: 1vw;
+  font-family: 'Nunito', sans-serif;
 }
 
 .submitButton {
@@ -333,4 +438,61 @@ footer {
 .filler {
   height: 363px;
   background: #FFF7C9;
+}
+
+.priceShowButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 53px;
+  margin-bottom: 1vh;
+}
+
+.showButton {
+  font-family: 'Nunito';
+  align-self: center;
+
+}
+
+.detailsButton {
+  align-self: center;
+}
+
+.MuiTypography-root h2 {
+  font-family: 'Nunito';
+}
+
+#modal-modal-description {
+  text-align: center;
+
+}
+
+
+
+h4 {
+  font-family: 'Nunito';
+  font-size: 1.1em;
+}
+
+h4 #text {
+font-family: 'Nunito';
+}
+
+.showButtons {
+  margin-left: 307px;
+}
+
+.showStuff {
+  font-family: 'Nunito';
+}
+
+.showStuffBold {
+    font-family: 'Nunito';
+    font-weight: 700;
+    line-height: 0;
+    font-size: 1.1em;
+}
+
+.showName {
+  font-size: 1.2em;
 }

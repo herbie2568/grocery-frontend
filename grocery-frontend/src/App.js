@@ -12,6 +12,8 @@ import {
   useParams
 } from "react-router-dom" ;
 import Show from "./pages/Show"
+import Login from './pages/Login'
+import Signup from './pages/Signup'
 import axios from 'axios'
 import './css/home.css';
 import Edit from "./pages/Edit"
@@ -61,11 +63,20 @@ const App = () => {
 
       </div>
       <nav className = 'navBar'>
+      <div className = 'loginButtonDiv'>
+      <Login />
+      <Signup />
+
+      </div>
+
+      <div className = 'navbarRight'>
       <Link className = 'link' to="/">Home</Link>
       <Link className = 'link' to="/review">Reviews</Link>
       <Link className = 'link' to="/new">Add Item</Link>
 
+
       <div id="google_translate_element"></div>
+      </div>
       </nav>
       </div>
     </main>
@@ -99,6 +110,7 @@ const App = () => {
       <div className = 'footerLogoDiv'>
       <img className = 'footerLogo' src = 'https://i.imgur.com/syW8iwL.png?1'></img>
       </div>
+      <p className = 'bottomLine'>©Website made by <a href = 'https://www.linkedin.com/in/jiheekim03/'>Jihee Kim</a> and <a href = 'https://www.linkedin.com/in/lilychen910/'>Lily Chen</a></p>
 
     </footer>
 

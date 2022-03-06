@@ -38,9 +38,12 @@ const Groceries = () => {
 
     return (
       <>
+      <div className = 'searchDiv'>
       <input className = 'searchInput' type="text" placeholder="search..." value={filter} onChange={(e) => {e.preventDefault(); setFilter(e.target.value);
       }}
       ></input>
+      <img class = 'search-picshow' src = 'https://www.freeiconspng.com/thumbs/magnifying-glass-icon/magnifying-glass-icon-13.png'></img>
+      </div>
 
       <section class = 'body'>
       <Carousel>
@@ -68,19 +71,23 @@ const Groceries = () => {
         search.name.toLowerCase().includes(filter.toLowerCase())).map((grocery)=>{
           return (<div key = {grocery._id} >
             <div className = 'groceryDiv'>
-            {<li className = 'groceryName'>{grocery.name}</li>}
+            <div className = 'nameDiv'><li className = 'groceryName'>{grocery.name}</li></div>
 
-            {<img src = {grocery.image} />}
-            {<li className = 'groceryPrice'>{grocery.price}</li>}
+            <img src = {grocery.image} />
 
-            <div className = "buttons">
-            <Show name = {grocery.name} image = {grocery.image}
+            <div className = 'priceShowButton'>
+            <li className = 'groceryPrice'>{grocery.price}</li>
+
+            <Show className = 'showButton' name = {grocery.name} image = {grocery.image}
             description = {grocery.description}
             tag = {grocery.tag}
+            price = {grocery.price}
             inStock = {grocery.inStock ? <li>Out of Stock</li> : <li>In Stock</li>}
             delivery = {grocery.delivery ? <li>Delivery: Unavailable</li> : <li>Delivery: Available</li>}/>
+            </div>
 
-            <Edit setGroceries={setGroceries} groceries={groceries} grocery={grocery}/>
+            <div className = "buttons">
+            <Edit className = 'edit' setGroceries={setGroceries} groceries={groceries} grocery={grocery}/>
 
             <Grid>
             <Grid item xs={8}>
