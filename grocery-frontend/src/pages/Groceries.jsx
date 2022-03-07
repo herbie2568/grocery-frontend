@@ -48,19 +48,21 @@ const Groceries = () => {
       <section className = 'body'>
       <div className = 'carouselContainerDiv'>
       <div className = 'carouselContainer'>
-      <Carousel>
-      <div className = 'middleImageDiv'>
+      <Carousel showArrows={true} autoPlay = {true} infiniteLoop = {true} showStatus = {false} useKeyboardArrows = {true}>
+      <div className = 'middleImageDiv1'>
+      <div className = 'filler1'></div>
       <img className = 'middleImage' src="https://i.imgur.com/LV87Nfn.png?1" />
 
       </div>
-      <div className = 'middleImageDiv'>
+      <div className = 'middleImageDiv2'>
+      <div className = 'filler2'></div>
       <img className = 'middleImage' src="https://i.imgur.com/jHpsOSy.png" />
 
       </div>
-      <div className = 'middleImageDiv2'>
-      <div className = 'filler'></div>
+      <div className = 'middleImageDiv3'>
+      <div className = 'filler3'></div>
       <img className = 'middleImage' src="https://i.imgur.com/TX7yLBA.png" />
-      <div className = 'filler'></div>
+      <div className = 'filler3'></div>
 
       </div>
       </Carousel>
@@ -68,8 +70,13 @@ const Groceries = () => {
       </div>
 
       <div className = 'groceryContainerDiv'>
-      <h2 className = 'ourProducts'>Our Products</h2>
+      <div className = 'itemsDiv'>
+        <h2 className = 'ourProducts'>Our Products</h2>
+
+      </div>
+      <div className = 'itemNumber'>{groceries.length} items</div>
       <div className = 'groceryContainer'>
+
       {
         groceries.filter((search) =>
         search.name.toLowerCase().includes(filter.toLowerCase())).map((grocery)=>{

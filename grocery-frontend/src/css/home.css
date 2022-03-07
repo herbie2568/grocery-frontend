@@ -15,6 +15,7 @@ h2 {
 
 .groceryContainer {
   display: flex;
+  /* flex-direction: column; */
   justify-content: center;
   gap: 4vw;
   flex-flow: row wrap;

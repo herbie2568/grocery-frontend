@@ -270,6 +270,7 @@ nav {
 .body {
   margin-top: 18vh;
   text-align: center;
+  margin-bottom: 15vh;
 }
 
 .new-container, .reviewDiv {
@@ -335,11 +336,6 @@ nav {
 }
 
 
-.middleImageDiv2 {
-  display: flex;
-  flex-direction: column;
-  background: #FFF7C9;
-}
 
 .carouselContainer {
   width: min(100vw, 1250px);
@@ -356,9 +352,11 @@ nav {
   flex-direction: column;
 }
 
+
 footer {
   background: #b4dbbb;
   padding-top: 1vh;
+  padding-bottom: 1vh;
 }
 
 .footerUL {
@@ -371,6 +369,7 @@ footer {
 
 .footerLogoDiv {
   text-align: center;
+
 }
 
 .footerLogo {
@@ -410,6 +409,7 @@ footer {
 .bottomLine {
   text-align: center;
   font-size: 8pt;
+  /* margin-bottom: 3vh; */
 }
 
 .new-container {
@@ -423,6 +423,7 @@ footer {
   font-family: 'Nunito', sans-serif;
   font-size: 16px;
   font-weight: 600;
+
 }
 
 .addInput2 {
@@ -533,8 +534,41 @@ footer {
 
 }
 
-.filler {
-  height: 27px;
+.middleImageDiv1 {
+  display: flex;
+  flex-direction: column;
+  background: #E1F2DC;
+  /* margin-top: 10px; */
+}
+
+.middleImageDiv2 {
+  display: flex;
+  flex-direction: column;
+  background: #FC8D6A;
+  /* margin-top: 10px; */
+}
+
+
+.middleImageDiv3 {
+  display: flex;
+  flex-direction: column;
+  background: #FFF7C9;
+  /* margin-top: 10px; */
+}
+
+
+/* .filler1 {
+height: 20px;
+background: #E1F2DC;
+}
+
+.filler2 {
+ height: 10px;
+ background: #FC8D6A;
+} */
+
+.filler3 {
+  height: 25px;
   /* background: #FFF7C9; */
 }
 
@@ -568,6 +602,7 @@ footer {
 h4 {
   font-family: 'Nunito';
   font-size: 1.1em;
+  margin: 10px 0;
 }
 
 h4 #text {
@@ -590,7 +625,7 @@ font-family: 'Nunito';
 }
 
 .showName {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 .imgDiv {
@@ -598,5 +633,14 @@ font-family: 'Nunito';
   width: 100%;
   background: #F2F1DA;
   padding-top: 20px;
+
+}
+
+
+
+.itemNumber {
+  align-self: center;
+  font-weight: 600;
+  margin-bottom: 1vh;
 
 }

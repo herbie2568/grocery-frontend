@@ -9,5 +9,8 @@
 .new-container form {
   display: flex;
   flex-direction: column;
+  align-self: center;
+  width: clamp(300px, 80%, 500px);
   
+
 }
