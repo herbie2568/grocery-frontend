@@ -64,6 +64,10 @@ nav {
   font-family: 'Nunito', sans-serif;
   transition-duration: 0.3s;
   font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
 
 }
 
@@ -80,6 +84,39 @@ nav {
   gap: 1vw;
   margin-left: 10vw;
   align-self: center;
+}
+
+.loginDiv {
+  text-align: center;
+
+}
+
+.loginForm {
+  display:flex;
+  flex-direction: column;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+  align-items: center;
+}
+
+.accountButton {
+  border: none;
+  background: transparent;
+  text-decoration: underline;
+  font-size: 1em;
+  font-family: 'Nunito';
+  font-weight: 500;
+  color: #15392f;
+
+}
+
+.accountButton:hover {
+  cursor: pointer;
+}
+
+.buttonDiv {
+  text-align: center;
+  margin-bottom: 5vh;
 }
 
 .searchDiv {
@@ -422,6 +459,29 @@ footer {
   background: #eba743;
 }
 
+.logoutButton {
+  padding: 8px;
+  width: 100px;
+  align-self: center;
+  background: #F2F1DA;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+  transition-duration: 0.3s;
+  font-weight: 600;
+  margin: 3vh 0;
+}
+
+.logoutButton:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  background: #eba743;
+}
+
+.logoutDiv, .welcomeDiv {
+  text-align: center;
+}
 .checkbox {
   width: 20px;
   height: 20px;

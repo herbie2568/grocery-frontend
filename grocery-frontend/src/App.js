@@ -14,7 +14,7 @@ import {
   useParams
 } from "react-router-dom" ;
 import Show from "./pages/Show"
-import Login from './pages/Login'
+import Login2 from './pages/Login2'
 import Signup from './pages/Signup'
 import axios from 'axios'
 import './css/home.css';
@@ -76,8 +76,8 @@ const App = () => {
       </div>
       <nav className = 'navBar'>
       <div className = 'loginButtonDiv'>
-      <Login />
-      <Signup />
+      <Login2 />
+      
 
       </div>
 
