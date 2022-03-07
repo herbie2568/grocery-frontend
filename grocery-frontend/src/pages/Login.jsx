@@ -2,7 +2,7 @@ import {useState} from 'react';
 import { styled, Box } from '@mui/system';
 import ModalUnstyled from '@mui/base/ModalUnstyled';
 import axios from 'axios'
-import PropTypes from 'prop-types';
+
 
 const StyledModal = styled(ModalUnstyled)`
   position: fixed;
@@ -36,7 +36,7 @@ const style = {
   pb: 3,
 };
 
-const Login = (setToken) => {
+const Login = ({setToken}) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -108,7 +108,7 @@ const Login = (setToken) => {
         </div>
           <h2 id="unstyled-modal-title">Log In</h2>
           <div className = "edit-container">
-          <form onSubmit = {handleSubmit} >
+          <form onSubmit = {handleNewLoginFormSubmit}>
 
           <input className = 'addInput' type = 'text' placeholder = 'Username...' onChange={handleNewUsernameChange}/><br/>
           <input className = 'addInput' type = 'password' placeholder = 'Password...' onChange={handleNewPasswordChange}/><br/>
@@ -123,13 +123,10 @@ const Login = (setToken) => {
       </StyledModal>
 
 
-    
+
     </div>
   );
 }
 
-Login.propTypes = {
-  setToken: PropTypes.func.isRequired
-}
 
 export default Login

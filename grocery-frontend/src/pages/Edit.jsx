@@ -79,7 +79,6 @@ const Edit = (props) => {
   }
 
 
-
   const handleToggleEdit = (groceryData)=>{
       axios
           .put(
@@ -116,14 +115,14 @@ const Edit = (props) => {
     >
     <Box sx={style}>
     <Typography id="modal-modal-title" variant="h6" component="h2">
-    <h2 className = 'editTitle'>Edit a grocery</h2>
+    <h2 className = 'editTitle'>Edit Item</h2>
     <div className = "edit-container">
     <form onSubmit={(e)=>{e.preventDefault();handleToggleEdit(props.grocery)}}>
-    <input type = 'text' className = 'addInput' placeholder = 'Item Name...' onChange={handleNewNameChange}/><br/>
-    <input className = 'addInput' type = 'text' placeholder = 'Image URL...' onChange={handleNewImageChange}/><br/>
-    <input className = 'addInput' type = 'text' placeholder = 'Item Description...' onChange={handleNewDescriptionChange}/><br/>
-    <input className = 'addInput' type = 'text' placeholder = 'Price...' onChange={handleNewPriceChange}/><br/>
-    <input className = 'addInput' type = 'text' placeholder = 'Tags...' onChange={handleNewTagChange}/><br/>
+    <input type = 'text' className = 'addInput' value = {props.grocery.name} placeholder = 'Item Name...' onChange={handleNewNameChange}/><br/>
+    <input className = 'addInput' type = 'text' placeholder = 'Image URL...' value = {props.grocery.image} onChange={handleNewImageChange}/><br/>
+    <input className = 'addInput' type = 'text' placeholder = 'Item Description...' value = {props.grocery.description} onChange={handleNewDescriptionChange}/><br/>
+    <input className = 'addInput' type = 'text' placeholder = 'Price...' value = {props.grocery.price} onChange={handleNewPriceChange}/><br/>
+    <input className = 'addInput' type = 'text' placeholder = 'Tags...' value = {props.grocery.tag} onChange={handleNewTagChange}/><br/>
     <div className = 'stockDelivery2'>
     <div className = 'stockCheck'>
     In Stock: <input className = 'checkbox' type = 'checkbox' onChange={handleNewStockChange}/>
@@ -132,7 +131,7 @@ const Edit = (props) => {
     Available for Delivery: <input className = 'checkbox' type = 'checkbox' onChange={handleNewDeliveryChange}/>
     </div>
     </div>
-      <input className = 'submitButton' type = 'submit' value = 'Edit grocery' />
+      <input className = 'submitButton' type = 'submit' value = 'Submit Changes' />
       </form>
       </div>
     </Typography>

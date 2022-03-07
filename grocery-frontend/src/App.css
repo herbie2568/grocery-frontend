@@ -95,7 +95,7 @@ nav {
   height: 20px;
   width: 20px;
   position: fixed;
-  bottom: 90.5%;
+  bottom: 90.7%;
   right: 5%;
   z-index: 1000;
 
@@ -104,8 +104,8 @@ nav {
 
 
 .goog-te-gadget-simple {
-  border: none;
-   background-color: transparent;
+  border: none !important;
+   background-color: transparent !important;
    outline: none !important;
    margin: 0;
    position: relative;
@@ -129,7 +129,9 @@ nav {
   transform: scale(1.2)
 }
 
-
+#:0.targetLanguage {
+  display: none;
+}
 
 .logoAnchor {
   width: min(20%, 100px);
