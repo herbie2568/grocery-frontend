@@ -42,10 +42,12 @@ const Groceries = () => {
       <input className = 'searchInput' type="text" placeholder="search..." value={filter} onChange={(e) => {e.preventDefault(); setFilter(e.target.value);
       }}
       ></input>
-      <img class = 'search-picshow' src = 'https://www.freeiconspng.com/thumbs/magnifying-glass-icon/magnifying-glass-icon-13.png'></img>
+      <img className = 'search-picshow' src = 'https://www.freeiconspng.com/thumbs/magnifying-glass-icon/magnifying-glass-icon-13.png'></img>
       </div>
 
-      <section class = 'body'>
+      <section className = 'body'>
+      <div className = 'carouselContainerDiv'>
+      <div className = 'carouselContainer'>
       <Carousel>
       <div className = 'middleImageDiv'>
       <img className = 'middleImage' src="https://i.imgur.com/LV87Nfn.png?1" />
@@ -55,13 +57,15 @@ const Groceries = () => {
       <img className = 'middleImage' src="https://i.imgur.com/jHpsOSy.png" />
 
       </div>
-      <div className = 'middleImageDiv'>
-      <div className = 'filler'>
+      <div className = 'middleImageDiv2'>
+
       <img className = 'middleImage' src="https://i.imgur.com/TX7yLBA.png" />
-      </div>
+      <div className = 'filler'></div>
 
       </div>
       </Carousel>
+      </div>
+      </div>
 
       <div className = 'groceryContainerDiv'>
       <h2 className = 'ourProducts'>Our Products</h2>

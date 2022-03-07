@@ -64,7 +64,7 @@ const Show = (props) => {
     <Box className = 'showModal' sx = {style}>
 
     <Typography id="modal-modal-title" variant="h6" component="h2">
-    <h2 class = 'showName'>{props.name}</h2>
+    <h2 className = 'showName'>{props.name}</h2>
     </Typography>
     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
     <img className = 'modalImage' src = {props.image}></img>

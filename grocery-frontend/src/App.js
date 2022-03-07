@@ -70,7 +70,7 @@ const App = () => {
       <div className = 'logoDiv'>
       <div className = 'logoName'>
       <a className = 'logoAnchor' href = '/'><img className = 'logo' src = 'https://i.imgur.com/6cjbsLL.png'></img></a>
-      <img src ='https://i.imgur.com/eprK5RZ.png' class = 'appName'></img>
+      <img src ='https://i.imgur.com/eprK5RZ.png' className = 'appName'></img>
       </div>
 
       </div>

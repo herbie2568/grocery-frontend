@@ -63,7 +63,7 @@ const Reviews = () => {
           if (!review.image) {
             review.image = 'https://i.imgur.com/KH2GvHe.png'
           }
-          return <div class = 'reviewContainer' key = {review._id} >
+          return <div className = 'reviewContainer' key = {review._id} >
           {<h3>Name: {review.name}</h3>}
           {<h4>Subject: {review.subject}</h4>}
           {<li><img className = 'reviewImage' src = {review.image}/></li>}
