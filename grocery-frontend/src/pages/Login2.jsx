@@ -77,7 +77,7 @@ const Login = () => {
 
  const handleLogin = (event) => {
     event.preventDefault()
-    axios.put('https://stark-shelf-08940.herokuapp.com/users',
+    axios.put('https://stark-shelf-08940.herokuapp.com/users/login',
     {
       username: username,
       password: password
