@@ -23,9 +23,9 @@ h2 {
 
 .buttons {
   display: flex;
-  justify-content: center;
-  margin-right: 1vw;
-  gap: 64px;
+  justify-content: flex-end;
+  margin-right: 25px;
+  /* gap: 64px; */
   margin-bottom: 1vh;
 }
 

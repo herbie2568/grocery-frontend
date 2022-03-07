@@ -118,11 +118,11 @@ const Edit = (props) => {
     <h2 className = 'editTitle'>Edit Item</h2>
     <div className = "edit-container">
     <form onSubmit={(e)=>{e.preventDefault();handleToggleEdit(props.grocery)}}>
-    <input type = 'text' className = 'addInput' value = {props.grocery.name} placeholder = 'Item Name...' onChange={handleNewNameChange}/><br/>
-    <input className = 'addInput' type = 'text' placeholder = 'Image URL...' value = {props.grocery.image} onChange={handleNewImageChange}/><br/>
-    <input className = 'addInput' type = 'text' placeholder = 'Item Description...' value = {props.grocery.description} onChange={handleNewDescriptionChange}/><br/>
-    <input className = 'addInput' type = 'text' placeholder = 'Price...' value = {props.grocery.price} onChange={handleNewPriceChange}/><br/>
-    <input className = 'addInput' type = 'text' placeholder = 'Tags...' value = {props.grocery.tag} onChange={handleNewTagChange}/><br/>
+    <input type = 'text' className = 'addInput' defaultValue = {props.grocery.name} placeholder = 'Item Name...' onChange={handleNewNameChange}/><br/>
+    <input className = 'addInput' type = 'text' placeholder = 'Image URL...' defaultValue = {props.grocery.image} onChange={handleNewImageChange}/><br/>
+    <input className = 'addInput' type = 'text' placeholder = 'Item Description...' defaultValue = {props.grocery.description} onChange={handleNewDescriptionChange}/><br/>
+    <input className = 'addInput' type = 'text' placeholder = 'Price...' defaultValue = {props.grocery.price} onChange={handleNewPriceChange}/><br/>
+    <input className = 'addInput' type = 'text' placeholder = 'Tags...' defaultValue = {props.grocery.tag} onChange={handleNewTagChange}/><br/>
     <div className = 'stockDelivery2'>
     <div className = 'stockCheck'>
     In Stock: <input className = 'checkbox' type = 'checkbox' onChange={handleNewStockChange}/>

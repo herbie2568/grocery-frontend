@@ -63,37 +63,33 @@ const App = () => {
 
 
 
-  return (
+    return (
       <>
-    <main>
+      <main>
       <div className = 'headerDiv'>
-      <div className = 'logoDiv'>
-      <div className = 'logoName'>
-      <a className = 'logoAnchor' href = '/'><img className = 'logo' src = 'https://i.imgur.com/6cjbsLL.png'></img></a>
-      <img src ='https://i.imgur.com/eprK5RZ.png' className = 'appName'></img>
-      </div>
-
-      </div>
-      <nav className = 'navBar'>
-      <div className = 'loginButtonDiv'>
-      <Login2 />
-      
-
-      </div>
-
-      <div className = 'navbarRight'>
-      <Link className = 'link' to="/">Home</Link>
-      <Link className = 'link' to="/review">Reviews</Link>
-      <Link className = 'link' to="/new">Add Item</Link>
+        <div className = 'logoDiv'>
+          <div className = 'logoName'>
+            <a className = 'logoAnchor' href = '/'><img className = 'logo' src = 'https://i.imgur.com/6cjbsLL.png'></img></a>
+            <img src ='https://i.imgur.com/eprK5RZ.png' className = 'appName'></img>
+          </div>
+          <div className = 'loginButtonDiv'>
+          <Login2 />
 
 
-      <div id="google_translate_element"></div>
-      </div>
-      </nav>
-      </div>
-    </main>
+          </div>
+        </div>
+        <nav className = 'navBar'>
+          <div className = 'navbarRight'>
+            <Link className = 'link' to="/">Home</Link>
+            <Link className = 'link' to="/review">Reviews</Link>
+            <Link className = 'link' to="/new">Add Item</Link>
+            <div id="google_translate_element"></div>
+          </div>
+        </nav>
+        </div>
+      </main>
 
-    <div className="wrapper">
+      <div className="wrapper">
 
       <Routes>
       <Route path="/" element={<Groceries />}/>
@@ -101,26 +97,26 @@ const App = () => {
       <Route path="/review" element={<Reviews />}/>
       </Routes>
 
-    </div>
+      </div>
 
 
-    <footer>
+      <footer>
 
       <ul className = 'footerUL'>
 
-        <li  className = 'footerLI'>About</li>
-        <li  className = 'footerLI'>Legal Terms</li>
-        <li  className = 'footerLI'>Privacy Statement</li>
-        <li  className = 'footerLI'>Customer Support</li>
-        <li className = 'footerLI'>©2022 Seoul Sisters</li>
+      <li  className = 'footerLI'>About</li>
+      <li  className = 'footerLI'>Legal Terms</li>
+      <li  className = 'footerLI'>Privacy Statement</li>
+      <li  className = 'footerLI'>Customer Support</li>
+      <li className = 'footerLI'>©2022 Seoul Sisters</li>
       </ul>
 
       <div className = 'socialIconsDiv'>
-        <FacebookIcon className = 'socialIcon'style = {{color: '#4267B2'}}/>
-        <InstagramIcon className = 'socialIcon' style = {{color: '#8a3ab9'}}/>
-        <TwitterIcon className = 'socialIcon' style = {{color: '#00acee'}}/>
-        <GitHubIcon className = 'socialIcon' style = {{color: '#171515'}}/>
-        <LinkedInIcon className = 'socialIcon' style = {{color: '#0e76a8'}}/>
+      <FacebookIcon className = 'socialIcon'style = {{color: '#4267B2'}}/>
+      <InstagramIcon className = 'socialIcon' style = {{color: '#8a3ab9'}}/>
+      <TwitterIcon className = 'socialIcon' style = {{color: '#00acee'}}/>
+      <GitHubIcon className = 'socialIcon' style = {{color: '#171515'}}/>
+      <LinkedInIcon className = 'socialIcon' style = {{color: '#0e76a8'}}/>
       </div>
 
       <div className = 'footerLogoDiv'>
@@ -128,11 +124,11 @@ const App = () => {
       </div>
       <p className = 'bottomLine'>©Website made by <a href = 'https://www.linkedin.com/in/jiheekim03/'>Jihee Kim</a> and <a href = 'https://www.linkedin.com/in/lilychen910/'>Lily Chen</a></p>
 
-    </footer>
+      </footer>
 
 
-    </>
-  )
-}
+      </>
+    )
+  }
 
-export default App;
+  export default App;

@@ -48,9 +48,13 @@ const Reviews = () => {
 
     return (
       <>
-      <input className = 'searchInput2' type="text" placeholder="search..." value={filter} onChange={(e) => {e.preventDefault(); setFilter(e.target.value);
+      <div className = 'searchDiv'>
+      <input className = 'searchInput' type="text" placeholder="search..." value={filter} onChange={(e) => {e.preventDefault(); setFilter(e.target.value);
       }}
       ></input>
+      <img className = 'search-picshow' src = 'https://www.freeiconspng.com/thumbs/magnifying-glass-icon/magnifying-glass-icon-13.png'></img>
+      </div>
+
       <div className = 'reviewDiv'>
       <h2>Reviews</h2>
       <div className = "review-container">

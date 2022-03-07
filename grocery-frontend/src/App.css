@@ -21,6 +21,7 @@ li {
   list-style-type: none;
 }
 
+
 .groceryDiv {
   width: 250px;
   /* background: #F2DADE; */
@@ -50,6 +51,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 
 }
 
@@ -81,9 +83,11 @@ nav {
 .loginButtonDiv {
   display: flex;
   flex-direction: row;
-  gap: 1vw;
-  margin-left: 10vw;
-  align-self: center;
+  /* align-self: center; */
+  position: relative;
+  bottom: 10px;
+  right: 20px;
+  top: 20px;
 }
 
 .loginDiv {
@@ -126,14 +130,15 @@ nav {
 .navbarRight {
   display: flex;
   gap: 40px;
-  margin-right: 5vw;
+  margin-left: 10vw;
+  /* align-items: flex-start; */
 }
 .search-picshow {
   height: 20px;
   width: 20px;
   position: fixed;
-  bottom: 90.7%;
-  right: 5%;
+  bottom: 82.7%;
+  right: 5vw;
   z-index: 1000;
 
 }
@@ -176,7 +181,7 @@ nav {
 }
 
 .logo {
-  width: min(100%, 100px);
+  width: min(100%, 90px);
 
 }
 
@@ -199,18 +204,21 @@ nav {
 .appName {
   /* text-align: center; */
   align-self: center;
-  width: min(80%, 550px)
+  width: min(80%, 450px)
 }
 
 .searchInput {
   height: 30px;
-  width: 200px;
+  width: 20vw;
   border-radius: 8px;
   position: fixed;
   z-index: 1000;
-  bottom: 90.75vh;
+  bottom: 82.75vh;
   right: 4vw;
   font-family: 'Nunito', sans-serif;
+  padding-left: 10px;
+  font-size: 1em;
+  font-weight: 600;
 }
 
 .searchInput2 {
@@ -222,8 +230,10 @@ nav {
   position: fixed;
   z-index: 1000;
   /* margin-top: 10vh; */
-  bottom: 90.75vh;
+  bottom: 83.75vh;
+  right: 4vw;
   font-family: 'Nunito', sans-serif;
+  padding-left: 10px;
 }
 
 .link {
@@ -245,7 +255,11 @@ nav {
   top: 0;
   opacity: 0.96;
   width: 100%;
+  height: 175px;
   z-index: 999;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .navBar {
@@ -320,10 +334,6 @@ nav {
   margin:0;
 }
 
-.detailsButton:hover {
-  transform: scale(1.05);
-  color: white;
-}
 
 .middleImageDiv2 {
   display: flex;
@@ -459,6 +469,25 @@ footer {
   background: #eba743;
 }
 
+.detailsButton {
+  align-self: center;
+  padding: 4px;
+  font-family: 'Nunito', sans-serif;
+  transition-duration: 0.3s;
+  font-weight: 600;
+  border-radius: 5px;
+  border: 1px solid black;
+  background: #eba743;
+  color:
+}
+
+.detailsButton:hover {
+  transform: scale(1.05);
+  background: #daf2df;
+  cursor: pointer;
+}
+
+
 .logoutButton {
   padding: 8px;
   width: 100px;
@@ -505,7 +534,7 @@ footer {
 }
 
 .filler {
-  height: 55px;
+  height: 27px;
   /* background: #FFF7C9; */
 }
 
@@ -513,7 +542,7 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 53px;
+  gap: 70px;
   margin-bottom: 1vh;
 }
 
@@ -523,9 +552,7 @@ footer {
 
 }
 
-.detailsButton {
-  align-self: center;
-}
+
 
 .MuiTypography-root h2 {
   font-family: 'Nunito';
@@ -548,7 +575,7 @@ font-family: 'Nunito';
 }
 
 .showButtons {
-  margin-left: 307px;
+  margin-left: 200px;
 }
 
 .showStuff {
@@ -564,4 +591,12 @@ font-family: 'Nunito';
 
 .showName {
   font-size: 1.2em;
+}
+
+.imgDiv {
+  text-align: center;
+  width: 100%;
+  background: #F2F1DA;
+  padding-top: 20px;
+
 }

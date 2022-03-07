@@ -58,7 +58,7 @@ const Groceries = () => {
 
       </div>
       <div className = 'middleImageDiv2'>
-
+      <div className = 'filler'></div>
       <img className = 'middleImage' src="https://i.imgur.com/TX7yLBA.png" />
       <div className = 'filler'></div>
 
