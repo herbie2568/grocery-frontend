@@ -9,6 +9,7 @@ import Nunito from '../Nunito/static/Nunito-Bold.ttf'
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import CloseIcon from '@mui/icons-material/Close';
 
 const StyledModal = styled(ModalUnstyled)`
   position: fixed;
@@ -82,6 +83,7 @@ const Show = (props) => {
         <Typography id="modal-modal-title" variant="h6" component="h2">
         <h2 className = 'showName'>{props.name}</h2>
         </Typography>
+        <CloseIcon className = 'closeIcon2' onClick = {handleClose}/>
 
         <div className = 'imgDiv'>
         <img className = 'modalImage' src = {props.image}></img>

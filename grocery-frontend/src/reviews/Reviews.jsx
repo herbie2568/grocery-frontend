@@ -26,7 +26,7 @@ const Reviews = () => {
 
   useEffect(()=>{
     axios
-    .get('http://localhost:3000/reviews/')
+    .get('https://stark-shelf-08940.herokuapp.com/reviews')
     .then((response)=>{
       setReviews(response.data);
     })
@@ -36,10 +36,10 @@ const Reviews = () => {
 
   const handleDelete = (reviewData)=>{
     axios
-    .delete(`https://floating-crag-29031.herokuapp.com/reviews/${reviewData._id}`)
+    .delete(`https://stark-shelf-08940.herokuapp.com/reviews/${reviewData._id}`)
       .then(()=>{
         axios
-        .get('https://floating-crag-29031.herokuapp.com/reviews/')
+        .get('https://stark-shelf-08940.herokuapp.com/reviews/')
         .then((response)=>{
           setReviews(response.data)
         })

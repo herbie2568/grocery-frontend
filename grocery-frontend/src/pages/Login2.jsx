@@ -4,6 +4,7 @@ import ModalUnstyled from '@mui/base/ModalUnstyled';
 import axios from 'axios'
 import Edit from './Edit'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import CloseIcon from '@mui/icons-material/Close';
 
 const StyledModal = styled(ModalUnstyled)`
   position: fixed;
@@ -61,6 +62,7 @@ const Login = ({setCurrentUser, currentUser, handleLogout, handleLogin, handleCr
         <div className = 'footerLogoDiv'>
         <img className = 'logo' src = 'https://i.imgur.com/syW8iwL.png?1'></img>
         </div>
+        <CloseIcon className = 'closeIcon' onClick = {handleClose}/>
         <div className = 'welcomeDiv'>
         {currentUser.username ?
           <div>
@@ -97,7 +99,7 @@ const Login = ({setCurrentUser, currentUser, handleLogout, handleLogin, handleCr
                      <input className = 'addInput' type='text' placeholder='username...' onChange={(event)=> {setUsername(event.target.value)}}/><br/>
                      <input className = 'addInput' type='password' placeholder='password...' onChange={(event)=> {setPassword(event.target.value)}}/><br/>
                      {toggleError ?
-                       <h5>{errorMessage}</h5>
+                       <h5 className = 'errorMessage'>{errorMessage}</h5>
                        :
                        null
                      }

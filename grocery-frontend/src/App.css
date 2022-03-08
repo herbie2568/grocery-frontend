@@ -655,11 +655,35 @@ font-family: 'Nunito';
 
 }
 
-
-
 .itemNumber {
   align-self: center;
   font-weight: 600;
   margin-bottom: 1vh;
+
+}
+
+.closeIcon {
+  position: relative;
+  left: 395px;
+  bottom: 100px;
+  transition-duration: 0.4s;
+}
+
+.closeIcon:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+
+}
+
+.closeIcon2 {
+  position: relative;
+  left: 395px;
+  bottom: 75px;
+  transition-duration: 0.4s;
+}
+
+.closeIcon2:hover {
+  transform: scale(1.2);
+  cursor: pointer;
 
 }
