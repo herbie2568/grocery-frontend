@@ -1,4 +1,5 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
+import axios from 'axios'
 import { styled, Box } from '@mui/system';
 import ModalUnstyled from '@mui/base/ModalUnstyled';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -10,6 +11,16 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import CloseIcon from '@mui/icons-material/Close';
+import Cart from './Cart.jsx'
+import {
+  Redirect,
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  Switch,
+  useParams
+} from "react-router-dom" ;
 
 const StyledModal = styled(ModalUnstyled)`
   position: fixed;
@@ -50,6 +61,21 @@ const Show = (props) => {
   const [selected, setSelected] = useState(false)
   const [heartColor, setHeartColor] = useState('grey')
   const [cartColor, setCartColor] = useState('grey')
+  
+
+  const [cart, setCart] = useState([])
+
+
+
+  useEffect(()=>{
+    axios
+    .get('https://stark-shelf-08940.herokuapp.com/cart')
+    .then((response)=>{
+      setCart(response.data);
+    })
+  }, [])
+
+  console.log(props);
 
   const heartColorChange = () => {
     if (heartColor === 'grey') {
@@ -59,6 +85,8 @@ const Show = (props) => {
     }
   }
 
+
+
   const cartColorChange = () => {
     if (cartColor === 'grey') {
       setCartColor('blue')
@@ -67,7 +95,12 @@ const Show = (props) => {
     }
   }
 
+
+
+
   return (
+    <>
+
     <div>
       <button className = 'detailsButton' type="button" onClick={handleOpen}>
         Item Details
@@ -129,6 +162,7 @@ const Show = (props) => {
         </Box>
       </StyledModal>
     </div>
+    </>
   );
 }
 

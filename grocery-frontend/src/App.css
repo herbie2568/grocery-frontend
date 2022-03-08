@@ -8,6 +8,15 @@ body {
 
 img {
   width: 250px;
+
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  object-fit: cover;
+}
+
+.groceryImage {
+  width: 250px;
+  height: 250px;
   margin-top: 1vh;
   margin-bottom: 1vh;
   object-fit: cover;
@@ -624,7 +633,7 @@ background: #E1F2DC;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 70px;
+  gap: 75px;
   margin-bottom: 1vh;
 }
 
@@ -715,4 +724,14 @@ font-family: 'Nunito';
   transform: scale(1.2);
   cursor: pointer;
 
+}
+
+.cartContainer {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  gap: 4vw;
+  flex-flow: row wrap;
+  margin-bottom: 5vh;
+  margin-top: 25vh;
 }

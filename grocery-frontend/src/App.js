@@ -14,6 +14,7 @@ import {
   useParams
 } from "react-router-dom" ;
 import Show from "./pages/Show"
+import Cart from "./pages/Cart"
 import axios from 'axios'
 import './css/home.css';
 import Edit from "./pages/Edit"
@@ -201,6 +202,7 @@ const App = () => {
           <div className = 'navbarRight'>
             <Link className = 'link' to="/">Products</Link>
             <Link className = 'link' to="/review">Reviews</Link>
+            
 
             <div>
             <>
@@ -224,9 +226,12 @@ const App = () => {
 
       <Routes>
       <Route path="/" element={<Groceries currentUser = {currentUser} setCurrentUser = {setCurrentUser} />}/>
+    <Route element={<Show groceries = {groceries} setGroceries = {setGroceries}/>}/>
       <Route path="/new" element={<CreateForm />}/>
 
       <Route path="/review" element={<Reviews />}/>
+
+      <Route path="/cart" element={<Cart groceries = {groceries} setGroceries = {setGroceries}/>}/>
       </Routes>
 
       </div>
