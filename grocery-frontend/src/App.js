@@ -252,7 +252,7 @@ const App = () => {
       </div>
 
       <div className = 'footerLogoDiv'>
-      <img className = 'footerLogo' src = 'https://i.imgur.com/syW8iwL.png?1'></img>
+        <a href = '/'><img className = 'footerLogo' src = 'https://i.imgur.com/syW8iwL.png?1'></img></a>
       </div>
       <p className = 'bottomLine'>©Website made by <a href = 'https://www.linkedin.com/in/jiheekim03/'>Jihee Kim</a> and <a href = 'https://www.linkedin.com/in/lilychen910/'>Lily Chen</a></p>
 

@@ -58,7 +58,7 @@ const Login = ({setCurrentUser, currentUser, handleLogout, handleLogin, handleCr
        onClose={handleClose}
        BackdropComponent={Backdrop}
      >
-       <Box sx={style}>
+       <Box sx={style} className = 'accountModal'>
         <div className = 'footerLogoDiv'>
         <img className = 'logo' src = 'https://i.imgur.com/syW8iwL.png?1'></img>
         </div>
@@ -66,7 +66,7 @@ const Login = ({setCurrentUser, currentUser, handleLogout, handleLogin, handleCr
         <div className = 'welcomeDiv'>
         {currentUser.username ?
           <div>
-            <h3>Welcome back {currentUser.username}! </h3>
+            <h3>Welcome back, {currentUser.username}! </h3>
 
           </div>
           :
@@ -74,7 +74,11 @@ const Login = ({setCurrentUser, currentUser, handleLogout, handleLogin, handleCr
         }
            <div className = 'logoutDiv'>
              {toggleLogout ?
-               <button className='logoutButton' onClick={handleLogout}>Logout</button> :
+               <div className = 'logoutButtonDiv'>
+               <button className='logoutButton' onClick={handleClose}>Back to site</button>
+               <button className='logoutButton' onClick={handleLogout}>Logout</button>
+               </div>
+             :
                <div className = 'buttonDiv'>
                  {toggleLogin ?
                    //login form
@@ -84,7 +88,7 @@ const Login = ({setCurrentUser, currentUser, handleLogout, handleLogin, handleCr
                        <input className = 'addInput' type='text' placeholder='username...' onChange={(event)=> {setUsername(event.target.value)}}/><br/>
                        <input className = 'addInput' type='password' placeholder='password...' onChange={(event)=> {setPassword(event.target.value)}}/><br/>
                        {toggleError ?
-                         <h5>{errorMessage}</h5>
+                         <h5 className = 'errorMessage'>{errorMessage}</h5>
                          :
                          null
                        }

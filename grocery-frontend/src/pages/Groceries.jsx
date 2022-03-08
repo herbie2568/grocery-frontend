@@ -93,7 +93,7 @@ const Groceries = ({currentUser, setCurrentUser}) => {
             <div className = 'groceryDiv'>
             <div className = 'nameDiv'><li className = 'groceryName'>{grocery.name}</li></div>
 
-            <img src = {grocery.image} />
+            <img className = 'groceryImage' src = {grocery.image} />
 
             <div className = 'priceShowButton'>
             <li className = 'groceryPrice'>{grocery.price}</li>
