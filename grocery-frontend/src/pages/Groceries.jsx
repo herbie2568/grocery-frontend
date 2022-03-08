@@ -98,12 +98,15 @@ const Groceries = ({currentUser, setCurrentUser}) => {
             <div className = 'priceShowButton'>
             <li className = 'groceryPrice'>{grocery.price}</li>
 
-            <Show className = 'showButton' name = {grocery.name} image = {grocery.image}
-            description = {grocery.description}
-            tag = {grocery.tag}
-            price = {grocery.price}
-            inStock = {grocery.inStock ? <li>Out of Stock</li> : <li>In Stock</li>}
-            delivery = {grocery.delivery ? <li>Delivery: Unavailable</li> : <li>Delivery: Available</li>}/>
+            <Show 
+              className = 'showButton'
+              name = {grocery.name}
+              image = {grocery.image}
+              description = {grocery.description}
+              tag = {grocery.tag}
+              price = {grocery.price}
+              inStock = {grocery.inStock ? <li>Out of Stock</li> : <li>In Stock</li>}
+              delivery = {grocery.delivery ? <li>Delivery: Unavailable</li> : <li>Delivery: Available</li>}/>
             </div>
 
             <div className = "buttons">

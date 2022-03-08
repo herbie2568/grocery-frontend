@@ -137,7 +137,6 @@ const App = () => {
     }).then(() => {
       axios.get(`https://stark-shelf-08940.herokuapp.com/users/findOne/${username}`,
     ).then((res) => {
-      console.log(res.data);
       setCurrentUser(res.data)
     })
     })
@@ -150,12 +149,12 @@ const App = () => {
   }
 
   const handleToggleForm = (event) => {
-  setToggleError(false)
-  if(toggleLogin === true) {
-   setToggleLogin(false)
-  } else {
-   setToggleLogin(true)
-  }
+    setToggleError(false)
+    if(toggleLogin === true) {
+      setToggleLogin(false)
+    } else {
+      setToggleLogin(true)
+    }
   }
 
   const handleToggleLogout = () => {
@@ -191,18 +190,32 @@ const App = () => {
             <img src ='https://i.imgur.com/eprK5RZ.png' className = 'appName'></img>
           </div>
           <div className = 'loginButtonDiv'>
-          <Login setCurrentUser = {setCurrentUser} currentUser = {currentUser}
-                handleCreateUser = {handleCreateUser} handleLogin = {handleLogin}
-                handleLogout = {handleLogout} handleToggleForm = {handleToggleForm}
-                handleToggleLogout = {handleToggleLogout} toggleLogin = {toggleLogin} toggleLogout = {toggleLogout} username = {username}
-                 setUsername = {setUsername} password = {password} setPassword = {setPassword} groceries = {groceries} setGroceries = {setGroceries} errorMessage = {errorMessage} setErrorMessage = {setErrorMessage} toggleError = {toggleError} setToggleError = {setToggleError}/>
+          <Login setCurrentUser = {setCurrentUser}
+                currentUser = {currentUser}
+                handleCreateUser = {handleCreateUser}
+                handleLogin = {handleLogin}
+                handleLogout = {handleLogout}
+                handleToggleForm = {handleToggleForm}
+                handleToggleLogout = {handleToggleLogout}
+                toggleLogin = {toggleLogin}
+                toggleLogout = {toggleLogout}
+                username = {username}
+                 setUsername = {setUsername}
+                 password = {password}
+                 setPassword = {setPassword}
+                 groceries = {groceries}
+                 setGroceries = {setGroceries}
+                 errorMessage = {errorMessage}
+                 setErrorMessage = {setErrorMessage}
+                 toggleError = {toggleError}
+                 setToggleError = {setToggleError}/>
           </div>
         </div>
         <nav className = 'navBar'>
           <div className = 'navbarRight'>
             <Link className = 'link' to="/">Products</Link>
             <Link className = 'link' to="/review">Reviews</Link>
-            
+
 
             <div>
             <>
