@@ -9,12 +9,13 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import DeleteRoundedIcon from '@mui/icons-material/DeleteRounded';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
+import Login from './Login2.jsx'
 
 
-
-const Groceries = () => {
+const Groceries = ({currentUser, setCurrentUser}) => {
   const [filter, setFilter] = useState('')
   const [groceries, setGroceries] = useState([])
+
 
   useEffect(()=>{
     axios
@@ -24,21 +25,23 @@ const Groceries = () => {
     })
   }, [])
 
+
+
   const handleDelete = (groceryData)=>{
     axios
     .delete(`https://stark-shelf-08940.herokuapp.com/groceries/${groceryData._id}`)
       .then(()=>{
         axios
-        .get('https://stark-shelf-08940.herokuapp.com/groceries')
+        .get('https://stark-shelf-08940.herokuapp.com/groceries/')
         .then((response)=>{
           setGroceries(response.data)
         })
       })
     }
-
     return (
       <>
       <div className = 'searchDiv'>
+
       <input className = 'searchInput' type="text" placeholder="search..." value={filter} onChange={(e) => {e.preventDefault(); setFilter(e.target.value);
       }}
       ></input>
@@ -104,16 +107,22 @@ const Groceries = () => {
             </div>
 
             <div className = "buttons">
+            {currentUser.username ?
             <Edit className = 'edit' setGroceries={setGroceries} groceries={groceries} grocery={grocery}/>
+            : null }
+
 
             <Grid>
+            {currentUser.username ?
             <Grid item xs={8}>
             <div className = "trashcan" onClick={ (event)=>{ handleDelete(grocery) } }> <DeleteRoundedIcon className = 'trashIcon'/></div>
             </Grid>
+              : null }
             </Grid>
             </div>
             </div>
             </div>
+
           )
         })
       }

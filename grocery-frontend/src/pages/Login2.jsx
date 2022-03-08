@@ -5,7 +5,6 @@ import axios from 'axios'
 import Edit from './Edit'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
-
 const StyledModal = styled(ModalUnstyled)`
   position: fixed;
   z-index: 1300;
@@ -38,106 +37,27 @@ const style = {
   pb: 3,
 };
 
-const Login = () => {
+
+const Login = ({setCurrentUser, currentUser, handleLogout, handleLogin, handleCreateUser, handleToggleForm, handleToggleLogout, toggleLogin, toggleLogout, username, setUsername, password, setPassword, groceries, setGroceries, toggleError, setToggleError, errorMessage, setErrorMessage}) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [groceries, setGroceries] = useState([])
   const [edit, setEdit] = useState('')
-  const [toggleLogin, setToggleLogin] = useState(true)
-  const [toggleError, setToggleError] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('')
-  const [toggleLogout, setToggleLogout] = useState(false)
-  const [currentUser, setCurrentUser] = useState({})
-
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
-
-  const handleCreateUser = (event) => {
-   event.preventDefault()
-   setUsername('')
-   setPassword('')
-   axios.post('https://stark-shelf-08940.herokuapp.com/users/createaccount',
-   {
-     username: username,
-     password: password
-   })
-   .then((response) => {
-     if(response.data.username){
-       setToggleError(false)
-       setErrorMessage('')
-       setCurrentUser(response.data)
-       handleToggleLogout()
-     } else {
-       setErrorMessage(response.data)
-       setToggleError(true)
-     }
-   })
- }
-
- const handleLogin = (event) => {
-    event.preventDefault()
-    axios.put('https://stark-shelf-08940.herokuapp.com/users/login',
-    {
-      username: username,
-      password: password
-    })
-    .then((response) => {
-      if(response.data.username){
-        setToggleError(false)
-        setErrorMessage('')
-        setCurrentUser(response.data)
-        handleToggleLogout()
-      } else {
-        setToggleError(true)
-        setErrorMessage(response.data)
-      }
-    }).then(() => {
-      axios.get(`https://stark-shelf-08940.herokuapp.com/users/findOne/${username}`,
-    ).then((res) => {
-      setGroceries(res.data)
-    })
-    })
-  }
-
-  const handleLogout = () => {
-  setUsername('')
-  setPassword('')
-  setCurrentUser({})
-  handleToggleLogout()
-}
-
-const handleToggleForm = (event) => {
- setToggleError(false)
- if(toggleLogin === true) {
-   setToggleLogin(false)
- } else {
-   setToggleLogin(true)
- }
-}
-
-const handleToggleLogout = () => {
-    if(toggleLogout) {
-      setToggleLogout(false)
-    } else {
-      setToggleLogout(true)
-    }
-  }
 
 
   return (
     <div>
-      <button className = 'loginButton' type="button" onClick={handleOpen}>
-        <AccountCircleIcon />Account
-      </button>
-      <StyledModal
-        aria-labelledby="unstyled-modal-title"
-        aria-describedby="unstyled-modal-description"
-        open={open}
-        onClose={handleClose}
-        BackdropComponent={Backdrop}
-      >
-        <Box sx={style}>
+     <button className = 'loginButton' type="button" onClick={handleOpen}>
+       <AccountCircleIcon />Account
+     </button>
+     <StyledModal
+       aria-labelledby="unstyled-modal-title"
+       aria-describedby="unstyled-modal-description"
+       open={open}
+       onClose={handleClose}
+       BackdropComponent={Backdrop}
+     >
+       <Box sx={style}>
         <div className = 'footerLogoDiv'>
         <img className = 'logo' src = 'https://i.imgur.com/syW8iwL.png?1'></img>
         </div>
@@ -193,10 +113,8 @@ const handleToggleLogout = () => {
            </div>
 
          </div>
-        </Box>
-      </StyledModal>
-
-
+         </Box>
+            </StyledModal>
 
     </div>
   );

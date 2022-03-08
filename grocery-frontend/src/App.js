@@ -4,8 +4,8 @@ import CreateForm from "./pages/CreateForm"
 import Groceries from "./pages/Groceries"
 import Reviews from "./reviews/Reviews"
 import Translate from "./pages/Translate"
-import { render } from "react-dom";
 import {
+  Redirect,
   BrowserRouter,
   Routes,
   Route,
@@ -14,8 +14,6 @@ import {
   useParams
 } from "react-router-dom" ;
 import Show from "./pages/Show"
-import Login2 from './pages/Login2'
-import Signup from './pages/Signup'
 import axios from 'axios'
 import './css/home.css';
 import Edit from "./pages/Edit"
@@ -28,13 +26,62 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { styled, Box } from '@mui/system';
+import ModalUnstyled from '@mui/base/ModalUnstyled';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import Login from './pages/Login2'
+
+
+
+
+const StyledModal = styled(ModalUnstyled)`
+  position: fixed;
+  z-index: 1300;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Backdrop = styled('div')`
+  z-index: -1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-tap-highlight-color: transparent;
+`;
+
+const style = {
+  width: 400,
+  bgcolor: '#daf2df',
+  border: '2px solid #eba743',
+  p: 2,
+  px: 4,
+  pb: 3,
+};
 
 
 const App = () => {
   const [filter, setFilter] = useState('')
   const [groceries, setGroceries] = useState([])
-  const [token, setToken] = useState();
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const [edit, setEdit] = useState('')
+  const [toggleLogin, setToggleLogin] = useState(true)
+  const [toggleError, setToggleError] = useState(false)
+  const [errorMessage, setErrorMessage] = useState('')
+  const [toggleLogout, setToggleLogout] = useState(false)
+  const [currentUser, setCurrentUser] = useState({})
 
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
 
 
 
@@ -45,8 +92,78 @@ const App = () => {
       setGroceries(response.data);
     })
   }, [])
+  const handleCreateUser = (event) => {
+   event.preventDefault()
+   setUsername('')
+   setPassword('')
+   axios.post('https://stark-shelf-08940.herokuapp.com/users/createaccount',
+   {
+     username: username,
+     password: password
+   })
+   .then((response) => {
+     if(response.data.username){
+       setToggleError(false)
+       setErrorMessage('')
+       setCurrentUser(response.data)
+       handleToggleLogout()
+     } else {
+       setErrorMessage(response.data)
+       setToggleError(true)
+     }
+   })
+  }
 
+  const handleLogin = (event) => {
+    event.preventDefault()
+    axios.put('https://stark-shelf-08940.herokuapp.com/users/login',
+    {
+      username: username,
+      password: password
+    })
+    .then((response) => {
+      console.log(response.data.username);
 
+      if(response.data.username){
+        setToggleError(false)
+        setErrorMessage('')
+        setCurrentUser(response.data)
+        handleToggleLogout()
+      } else {
+        setToggleError(true)
+        setErrorMessage(response.data)
+      }
+    }).then(() => {
+      axios.get(`https://stark-shelf-08940.herokuapp.com/users/findOne/${username}`,
+    ).then((res) => {
+      console.log(res.data);
+      setCurrentUser(res.data)
+    })
+    })
+  }
+  const handleLogout = () => {
+  setUsername('')
+  setPassword('')
+  setCurrentUser({})
+  handleToggleLogout()
+  }
+
+  const handleToggleForm = (event) => {
+  setToggleError(false)
+  if(toggleLogin === true) {
+   setToggleLogin(false)
+  } else {
+   setToggleLogin(true)
+  }
+  }
+
+  const handleToggleLogout = () => {
+    if(toggleLogout) {
+      setToggleLogout(false)
+    } else {
+      setToggleLogout(true)
+    }
+  }
 
 
   const handleDelete = (groceryData)=>{
@@ -73,14 +190,16 @@ const App = () => {
             <img src ='https://i.imgur.com/eprK5RZ.png' className = 'appName'></img>
           </div>
           <div className = 'loginButtonDiv'>
-          <Login2 />
-
-
+          <Login setCurrentUser = {setCurrentUser} currentUser = {currentUser}
+                handleCreateUser = {handleCreateUser} handleLogin = {handleLogin}
+                handleLogout = {handleLogout} handleToggleForm = {handleToggleForm}
+                handleToggleLogout = {handleToggleLogout} toggleLogin = {toggleLogin} toggleLogout = {toggleLogout} username = {username}
+                 setUsername = {setUsername} password = {password} setPassword = {setPassword} groceries = {groceries} setGroceries = {setGroceries} errorMessage = {errorMessage} setErrorMessage = {setErrorMessage} toggleError = {toggleError} setToggleError = {setToggleError}/>
           </div>
         </div>
         <nav className = 'navBar'>
           <div className = 'navbarRight'>
-            <Link className = 'link' to="/">Home</Link>
+            <Link className = 'link' to="/">Products</Link>
             <Link className = 'link' to="/review">Reviews</Link>
             <Link className = 'link' to="/new">Add Item</Link>
             <div id="google_translate_element"></div>
@@ -92,7 +211,7 @@ const App = () => {
       <div className="wrapper">
 
       <Routes>
-      <Route path="/" element={<Groceries />}/>
+      <Route path="/" element={<Groceries currentUser = {currentUser} setCurrentUser = {setCurrentUser} />}/>
       <Route path="/new" element={<CreateForm />}/>
       <Route path="/review" element={<Reviews />}/>
       </Routes>
