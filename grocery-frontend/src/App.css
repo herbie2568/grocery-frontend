@@ -50,7 +50,7 @@ li {
 nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 
 }
@@ -156,6 +156,10 @@ nav {
 
 #google_translate_element {
   background: transparent;
+  align-self: center;
+  position: relative;
+  top: 9px;
+
 }
 
 .goog-te-gadget span {
@@ -164,6 +168,7 @@ nav {
 
 .goog-te-gadget-icon {
   border-radius: 50%;
+
   transition-duration: 0.4s;
 }
 
@@ -244,6 +249,20 @@ nav {
 }
 
 .link:hover {
+  transform: scale(1.1);
+  color: #F2F1DA;
+
+}
+
+.link3 {
+  text-decoration: none;
+  color: black;
+  transition-duration: 0.4s;
+  font-weight: 700;
+  margin-right: 38px;
+}
+
+.link3:hover {
   transform: scale(1.1);
   color: #F2F1DA;
 

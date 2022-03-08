@@ -201,9 +201,21 @@ const App = () => {
           <div className = 'navbarRight'>
             <Link className = 'link' to="/">Products</Link>
             <Link className = 'link' to="/review">Reviews</Link>
-            <Link className = 'link' to="/new">Add Item</Link>
-            <div id="google_translate_element"></div>
+
+            <div>
+            <>
+              {currentUser.username ?
+
+            <Link className = 'link3' to="/new">Add Item</Link>
+            :
+            null
+          }
+          </>
           </div>
+
+
+          </div>
+          <div id="google_translate_element"></div>
         </nav>
         </div>
       </main>
@@ -213,6 +225,7 @@ const App = () => {
       <Routes>
       <Route path="/" element={<Groceries currentUser = {currentUser} setCurrentUser = {setCurrentUser} />}/>
       <Route path="/new" element={<CreateForm />}/>
+
       <Route path="/review" element={<Reviews />}/>
       </Routes>
 
