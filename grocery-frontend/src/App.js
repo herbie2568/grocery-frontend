@@ -93,6 +93,7 @@ const App = () => {
       setGroceries(response.data);
     })
   }, [])
+
   const handleCreateUser = (event) => {
    event.preventDefault()
    setUsername('')
